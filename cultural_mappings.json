@@ -1,0 +1,186 @@
+{
+  "metadata": {
+    "name": "AI Cultural Mappings",
+    "description": "Concept-level cultural mappings across English, Tamil, and Japanese — how each culture/language expresses the same underlying social concept, with notes on divergence.",
+    "languages": [
+      "english",
+      "tamil",
+      "japanese"
+    ],
+    "mapping_count": 10,
+    "schema_version": "1.0",
+    "note": "Curated starter set of verified concept mappings, meant to be extended incrementally rather than mass-generated."
+  },
+  "mappings": [
+    {
+      "concept": "expressing_strong_agreement",
+      "description": "How each culture/language emphatically agrees with a statement.",
+      "english": {
+        "expression": "no cap / for real",
+        "cultural_note": "Casual, Gen Z-coded emphatic agreement; 'no cap' signals total sincerity."
+      },
+      "tamil": {
+        "expression": "நிச்சயமா (nichayama)",
+        "cultural_note": "'Definitely/certainly' — used with emphatic tone for strong agreement in daily speech."
+      },
+      "japanese": {
+        "expression": "マジで (maji de) / ほんとに (honto ni)",
+        "cultural_note": "Emphatic confirmation, common across all ages, softer in tone than English slang equivalents."
+      },
+      "cross_cultural_note": "English slang for agreement skews youth/internet-coded; Tamil and Japanese equivalents are used more broadly across age groups without feeling like 'slang'."
+    },
+    {
+      "concept": "social_awareness_and_reading_the_room",
+      "description": "The ability to sense group mood and adjust behavior accordingly.",
+      "english": {
+        "expression": "read the room",
+        "cultural_note": "Used as a corrective/critical phrase when someone misjudges the mood."
+      },
+      "tamil": {
+        "expression": "சூழ்நிலையை புரிஞ்சுக்கோ (soozhnilaiyai purinjuko)",
+        "cultural_note": "Situational awareness is valued but not codified as a distinct named social skill the way it is in Japan."
+      },
+      "japanese": {
+        "expression": "空気を読む (kuuki wo yomu)",
+        "cultural_note": "A foundational, deeply codified social value in Japan; failing at it earns the label 'KY' (kuuki yomenai), a real social criticism."
+      },
+      "cross_cultural_note": "Japan uniquely elevates this into a named, teachable social competency; English and Tamil treat it as common sense rather than a distinct skill."
+    },
+    {
+      "concept": "respect_through_address_terms",
+      "description": "How casual/respectful address terms function differently across cultures.",
+      "english": {
+        "expression": "bro, dude, man",
+        "cultural_note": "Gender-informal address terms used loosely for friends, rarely carry hierarchy implications."
+      },
+      "tamil": {
+        "expression": "அண்ணா (anna) for men, அக்கா (akka) for women",
+        "cultural_note": "Literally 'older brother/sister' — used even for strangers to show respect and warmth, reflecting Tamil culture's emphasis on familial framing of social relationships."
+      },
+      "japanese": {
+        "expression": "さん (-san), 先輩 (senpai)",
+        "cultural_note": "Honorific suffixes are mandatory in most contexts; dropping them (yobisute) signals deep closeness or, if used wrongly, rudeness."
+      },
+      "cross_cultural_note": "Tamil and Japanese both encode social hierarchy/relationship into address terms far more than English does; Tamil does so via kinship terms, Japanese via honorific suffixes."
+    },
+    {
+      "concept": "teasing_between_friends",
+      "description": "Playful mockery as a marker of closeness rather than hostility.",
+      "english": {
+        "expression": "clowning / roasting",
+        "cultural_note": "Friendly insult exchange, common in youth and online meme culture."
+      },
+      "tamil": {
+        "expression": "கலாய்க்கிறது (kalaikkirathu)",
+        "cultural_note": "Central to Tamil friend-group banter; often loud and public, seen as a sign of comfort and affection."
+      },
+      "japanese": {
+        "expression": "いじる (ijiru)",
+        "cultural_note": "Root of Japanese 'manzai' comedy duo dynamics (boke/tsukkomi); playful teasing is a structured comedic and social ritual."
+      },
+      "cross_cultural_note": "All three cultures use teasing as bonding, but Japan has formalized it into comedic performance tradition more than the other two."
+    },
+    {
+      "concept": "expressing_disappointment_indirectly",
+      "description": "Softened or indirect ways to express dissatisfaction.",
+      "english": {
+        "expression": "it's... fine / meh",
+        "cultural_note": "Flat or lukewarm tone signals dissatisfaction without direct criticism."
+      },
+      "tamil": {
+        "expression": "சரியில்ல (sariyilla)",
+        "cultural_note": "'Not quite right' — moderately direct, though softened compared to outright criticism."
+      },
+      "japanese": {
+        "expression": "微妙 (bimyou)",
+        "cultural_note": "Culturally essential indirectness; Japanese social norms strongly favor avoiding direct negative statements, so 'bimyou' is a key face-saving tool."
+      },
+      "cross_cultural_note": "Japanese indirectness here is a deep cultural norm (avoiding direct 'no'), while English/Tamil versions are more casual stylistic choices."
+    },
+    {
+      "concept": "hyperbolic_excitement",
+      "description": "Words used to express something is amazing/extreme, often with flexible or even opposite meanings depending on tone.",
+      "english": {
+        "expression": "lit / insane / crazy",
+        "cultural_note": "Youth slang for extreme positive excitement, tone rarely flips negative."
+      },
+      "tamil": {
+        "expression": "செம (sema)",
+        "cultural_note": "Intensifier from 'pure/red', now used broadly for 'very/really' or standalone for 'awesome'."
+      },
+      "japanese": {
+        "expression": "やばい (yabai)",
+        "cultural_note": "Originally 'dangerous'; now context-flexible for both amazing and terrible, tone entirely carries the meaning."
+      },
+      "cross_cultural_note": "'Yabai' is unusually flexible even for slang — it can mean the opposite of itself depending on delivery, more so than the English or Tamil equivalents."
+    },
+    {
+      "concept": "fandom_devotion",
+      "description": "Terms for one's favorite celebrity/character and the culture of active fan support.",
+      "english": {
+        "expression": "bias / stan",
+        "cultural_note": "'Stan' (from an Eminem song) means an obsessive fan; 'bias' is borrowed fandom slang for a favorite member of a group."
+      },
+      "tamil": {
+        "expression": "favorite நடிகர் வழிபாடு",
+        "cultural_note": "Tamil fan culture centers heavily on cinema stars, with devotion sometimes reaching quasi-religious levels (cutouts, temples for actors)."
+      },
+      "japanese": {
+        "expression": "推し (oshi)",
+        "cultural_note": "Core concept in idol/anime fan culture; 'oshi-katsu' (推し活, supporting one's oshi) is a recognized lifestyle and consumer category."
+      },
+      "cross_cultural_note": "All three show fandom as an important cultural institution, but the object of fandom differs: idols/characters (Japan), film stars (Tamil), and more decentralized figures (English-speaking internet)."
+    },
+    {
+      "concept": "loyalty_in_friendship",
+      "description": "Expressions describing an unconditionally loyal friend.",
+      "english": {
+        "expression": "ride or die",
+        "cultural_note": "Originally biker/hip-hop culture, now mainstream for describing ultimate loyalty."
+      },
+      "tamil": {
+        "expression": "ஜீவ நண்பன் (jeeva nanban)",
+        "cultural_note": "'Life-friend' — reflects Tamil culture's framing of deep friendship in near-familial terms."
+      },
+      "japanese": {
+        "expression": "刎頸の友 (funkei no tomo)",
+        "cultural_note": "Classical Chinese-origin idiom retained in Japanese, literally 'a friend one would die for'; more literary/formal than everyday slang."
+      },
+      "cross_cultural_note": "English and Tamil versions are used in everyday casual speech; the Japanese equivalent is more literary, with 親友 (shin'yuu, 'true friend') used as the everyday casual version."
+    },
+    {
+      "concept": "gossip_sharing",
+      "description": "Informal request or act of sharing juicy personal information.",
+      "english": {
+        "expression": "spill the tea",
+        "cultural_note": "From Black and queer ballroom culture ('T' for Truth), now mainstream internet slang."
+      },
+      "tamil": {
+        "expression": "செய்தி சொல்லு (seydhi sollu)",
+        "cultural_note": "Straightforward 'tell me the news' — gossip culture is strong but lacks a distinct poetic slang phrase like 'spill the tea'."
+      },
+      "japanese": {
+        "expression": "ゴシップを話す (goshippu wo hanasu) / 噂話 (uwasabanashi)",
+        "cultural_note": "'Uwasabanashi' (rumor talk) is the traditional term; gossip is culturally viewed with more caution given emphasis on group harmony."
+      },
+      "cross_cultural_note": "English slang around gossip is playful and colorful; Japanese framing carries more social caution due to harmony-focused norms."
+    },
+    {
+      "concept": "showing_off_status",
+      "description": "Displaying wealth, success, or dominance, often ostentatiously.",
+      "english": {
+        "expression": "flex",
+        "cultural_note": "Hip-hop-derived, now mainstream for boasting about possessions/achievements."
+      },
+      "tamil": {
+        "expression": "காட்டிக்கிட்டு (kaattikittu) / style adikkarathu",
+        "cultural_note": "'Showing off' or 'putting on style' — used both playfully among friends and critically for real pretension."
+      },
+      "japanese": {
+        "expression": "マウントを取る (maunto wo toru)",
+        "cultural_note": "Borrowed from wrestling ('mount'); describes asserting status/dominance, often viewed critically since overt boasting clashes with modesty norms."
+      },
+      "cross_cultural_note": "Japan's modesty-valuing norms make 'flexing' more socially frowned upon than in English or Tamil youth culture, where it can be playful self-promotion."
+    }
+  ]
+}

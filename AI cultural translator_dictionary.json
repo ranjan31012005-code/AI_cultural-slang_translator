@@ -1,0 +1,786 @@
+{
+  "metadata": {
+    "name": "AI Cultural Translator Dictionary",
+    "description": "Slang and culturally-loaded terms across English, Tamil, and Japanese, with literal meaning, cultural meaning, formality, and cross-language equivalents.",
+    "languages": [
+      "english",
+      "tamil",
+      "japanese"
+    ],
+    "entry_count": 35,
+    "schema_version": "1.0",
+    "note": "This is a curated starter set of verified/well-known entries, not an exhaustive 1500-term set. See README notes for how to extend it responsibly."
+  },
+  "entries": [
+    {
+      "id": "en_001",
+      "term": "lit",
+      "language": "english",
+      "category": "youth_slang",
+      "literal_meaning": "on fire / illuminated",
+      "cultural_meaning": "Something exciting, excellent, or a great party/atmosphere.",
+      "formality": "very_informal",
+      "usage_context": "Casual conversation, social media, among youth.",
+      "equivalents": {
+        "tamil": {
+          "term": "kalakkal",
+          "transliteration": "கலக்கல்",
+          "notes": "Informal Tamil for 'amazing/awesome', used similarly for hyped events."
+        },
+        "japanese": {
+          "term": "yばい (yabai)",
+          "romaji": "yabai",
+          "notes": "Context-flexible slang meaning 'insane/amazing' (can also mean 'terrible') depending on tone."
+        }
+      }
+    },
+    {
+      "id": "en_002",
+      "term": "ghosting",
+      "language": "english",
+      "category": "relationships",
+      "literal_meaning": "becoming a ghost",
+      "cultural_meaning": "Abruptly cutting off all communication with someone without explanation.",
+      "formality": "informal",
+      "usage_context": "Dating, friendships, modern digital communication.",
+      "equivalents": {
+        "tamil": {
+          "term": "திடீரென தொடர்பை துண்டித்தல்",
+          "transliteration": "thideerena thodarbai thundithal",
+          "notes": "Descriptive phrase; no single-word slang equivalent exists in traditional Tamil."
+        },
+        "japanese": {
+          "term": "音信不通 (onshin fuutsuu)",
+          "romaji": "onshin fuutsuu",
+          "notes": "Literally 'no communication'; used similarly, though 'フェードアウト (feedo auto / fade out)' is also common among younger speakers."
+        }
+      }
+    },
+    {
+      "id": "en_003",
+      "term": "salty",
+      "language": "english",
+      "category": "emotions",
+      "literal_meaning": "having the taste of salt",
+      "cultural_meaning": "Bitter, irritated, or upset about something, often pettily.",
+      "formality": "very_informal",
+      "usage_context": "Casual, often about losing a game or minor slights.",
+      "equivalents": {
+        "tamil": {
+          "term": "eriச்சல்",
+          "transliteration": "erichal",
+          "notes": "Conveys irritation/annoyance with a similar petty, simmering tone."
+        },
+        "japanese": {
+          "term": "根に持つ (ne ni motsu)",
+          "romaji": "ne ni motsu",
+          "notes": "Literally 'to hold a grudge at the root'; captures the petty, lingering irritation sense of 'salty'."
+        }
+      }
+    },
+    {
+      "id": "en_004",
+      "term": "no cap",
+      "language": "english",
+      "category": "internet_slang",
+      "literal_meaning": "no lie / no exaggeration",
+      "cultural_meaning": "Used to affirm that a statement is true, not an exaggeration.",
+      "formality": "very_informal",
+      "usage_context": "Gen Z social media and speech, originating in African American Vernacular English.",
+      "equivalents": {
+        "tamil": {
+          "term": "unmaya sollren",
+          "transliteration": "உண்மையா சொல்றேன்",
+          "notes": "'I'm telling the truth' — closest functional equivalent, used for emphasis."
+        },
+        "japanese": {
+          "term": "マジで (maji de)",
+          "romaji": "maji de",
+          "notes": "'Seriously/for real' — commonly used to underline sincerity of a statement."
+        }
+      }
+    },
+    {
+      "id": "en_005",
+      "term": "shade (throwing shade)",
+      "language": "english",
+      "category": "social_interaction",
+      "literal_meaning": "shadow/shade",
+      "cultural_meaning": "Subtle, indirect insult or disrespect, often delivered with sarcasm.",
+      "formality": "informal",
+      "usage_context": "Pop culture, reality TV, social media exchanges; originated in Black and queer ballroom culture.",
+      "equivalents": {
+        "tamil": {
+          "term": "kindal adithal",
+          "transliteration": "கிண்டல் அடித்தல்",
+          "notes": "Teasing/mocking someone indirectly, often with sarcasm."
+        },
+        "japanese": {
+          "term": "皮肉る (hiniku-ru)",
+          "romaji": "hiniku-ru",
+          "notes": "'To be sarcastic/ironic toward someone' — closest match, though Japanese social norms make overt shade less common publicly."
+        }
+      }
+    },
+    {
+      "id": "en_006",
+      "term": "vibe check",
+      "language": "english",
+      "category": "internet_slang",
+      "literal_meaning": "checking the atmosphere/mood",
+      "cultural_meaning": "Assessing whether someone's mood, attitude, or energy fits the situation.",
+      "formality": "very_informal",
+      "usage_context": "Internet meme culture, casual social settings.",
+      "equivalents": {
+        "tamil": {
+          "term": "mood paakrathu",
+          "transliteration": "மூட் பார்க்கறது",
+          "notes": "Literally 'checking the mood' — a direct, commonly used loan-blend phrase among younger Tamil speakers."
+        },
+        "japanese": {
+          "term": "空気を読む (kuuki wo yomu)",
+          "romaji": "kuuki wo yomu",
+          "notes": "'To read the air' — a foundational Japanese social concept about sensing mood/atmosphere, deeper cultural weight than the English meme."
+        }
+      }
+    },
+    {
+      "id": "en_007",
+      "term": "ride or die",
+      "language": "english",
+      "category": "relationships",
+      "literal_meaning": "someone who rides with you until death",
+      "cultural_meaning": "A person of unwavering loyalty who will support you no matter what.",
+      "formality": "informal",
+      "usage_context": "Friendships, romantic partners, hype culture.",
+      "equivalents": {
+        "tamil": {
+          "term": "ஜீவ நண்பன்/ஜீவ தோழி",
+          "transliteration": "jeeva nanban / jeeva thozhi",
+          "notes": "'Life-friend' — conveys deep, lifelong loyalty, close to the sentiment though less about danger/risk."
+        },
+        "japanese": {
+          "term": "刎頸の友 (funkei no tomo)",
+          "romaji": "funkei no tomo",
+          "notes": "Classical idiom, 'a friend for whom one would cut one's own neck' — a friend worth dying for, very close in spirit."
+        }
+      }
+    },
+    {
+      "id": "en_008",
+      "term": "flex",
+      "language": "english",
+      "category": "youth_slang",
+      "literal_meaning": "to flex a muscle",
+      "cultural_meaning": "To show off wealth, status, or achievement, often ostentatiously.",
+      "formality": "very_informal",
+      "usage_context": "Hip-hop culture, social media, everyday boasting.",
+      "equivalents": {
+        "tamil": {
+          "term": "காட்டிக்கிட்டு",
+          "transliteration": "kaattikittu",
+          "notes": "'Showing off' — used the same way for boasting about possessions or achievements."
+        },
+        "japanese": {
+          "term": "マウントを取る (maunto wo toru)",
+          "romaji": "maunto wo toru",
+          "notes": "'To take mount' (from wrestling) — to assert dominance/status over someone, closely parallels 'flexing on' someone."
+        }
+      }
+    },
+    {
+      "id": "en_009",
+      "term": "extra",
+      "language": "english",
+      "category": "youth_slang",
+      "literal_meaning": "more than necessary",
+      "cultural_meaning": "Overly dramatic or excessive behavior for the situation.",
+      "formality": "very_informal",
+      "usage_context": "Casual criticism of someone's dramatic reaction.",
+      "equivalents": {
+        "tamil": {
+          "term": "over-a pண்ணுறாங்க",
+          "transliteration": "over-a pannuranga",
+          "notes": "Tamil-English hybrid slang: 'doing too much/overdoing it' — extremely common in colloquial Tamil."
+        },
+        "japanese": {
+          "term": "大げさ (oogesa)",
+          "romaji": "oogesa",
+          "notes": "'Exaggerated/overblown' — used for someone being dramatically over the top."
+        }
+      }
+    },
+    {
+      "id": "en_010",
+      "term": "simp",
+      "language": "english",
+      "category": "internet_slang",
+      "literal_meaning": "(derived from 'simpleton')",
+      "cultural_meaning": "Someone who does excessive favors or shows excessive devotion to a person they're attracted to, often seen as pandering.",
+      "formality": "very_informal",
+      "usage_context": "Internet meme culture, often used teasingly among friends.",
+      "equivalents": {
+        "tamil": {
+          "term": "love-la sikitiruken sonna madhiri",
+          "transliteration": "லவ்-ல சிக்கிட்டு இருக்கான்",
+          "notes": "Descriptive phrase 'stuck in love-struck devotion'; no exact single-word slang traditionally, though youth increasingly borrow 'simp' directly."
+        },
+        "japanese": {
+          "term": "貢ぐ (mitsugu)",
+          "romaji": "mitsugu",
+          "notes": "'To lavish gifts/money on someone romantically' — closely tied to the devotion/pandering sense of 'simping'."
+        }
+      }
+    },
+    {
+      "id": "en_011",
+      "term": "bougie",
+      "language": "english",
+      "category": "social_status",
+      "literal_meaning": "from 'bourgeois'",
+      "cultural_meaning": "Pretentiously upper-class or snobbish, often about lifestyle or taste.",
+      "formality": "informal",
+      "usage_context": "Describing someone acting or living above their means/status affectedly.",
+      "equivalents": {
+        "tamil": {
+          "term": "style adikkarathu",
+          "transliteration": "ஸ்டைல் அடிக்கறது",
+          "notes": "'Putting on airs/style' — used for someone acting pretentiously wealthy or classy."
+        },
+        "japanese": {
+          "term": "セレブ気取り (serebu kidori)",
+          "romaji": "serebu kidori",
+          "notes": "'Acting like a celebrity/socialite' — used for someone putting on affected upper-class airs."
+        }
+      }
+    },
+    {
+      "id": "en_012",
+      "term": "spill the tea",
+      "language": "english",
+      "category": "internet_slang",
+      "literal_meaning": "to spill hot tea",
+      "cultural_meaning": "To share gossip or juicy information, originally from Black and queer ballroom culture.",
+      "formality": "very_informal",
+      "usage_context": "Social gossip, especially among friends or on social media.",
+      "equivalents": {
+        "tamil": {
+          "term": "செய்தி சொல்லு",
+          "transliteration": "seydhi sollu",
+          "notes": "'Tell the news/gossip' — the informal request to share juicy details."
+        },
+        "japanese": {
+          "term": "ゴシップを話す (goshippu wo hanasu)",
+          "romaji": "goshippu wo hanasu",
+          "notes": "'To talk gossip' — straightforward loanword-based equivalent used in casual speech."
+        }
+      }
+    },
+    {
+      "id": "en_013",
+      "term": "ghost town (dead)",
+      "language": "english",
+      "category": "social_interaction",
+      "literal_meaning": "an abandoned town",
+      "cultural_meaning": "Describes a place or event that is empty or has no activity/energy.",
+      "formality": "informal",
+      "usage_context": "Describing parties, group chats, or places lacking activity.",
+      "equivalents": {
+        "tamil": {
+          "term": "onnume illa",
+          "transliteration": "ஒன்னுமே இல்ல",
+          "notes": "'Nothing's happening' — used to describe a dull/empty situation."
+        },
+        "japanese": {
+          "term": "閑散としている (kansan to shite iru)",
+          "romaji": "kansan to shite iru",
+          "notes": "'Desolate/sparse' — used for empty, lifeless places or events."
+        }
+      }
+    },
+    {
+      "id": "en_014",
+      "term": "hangry",
+      "language": "english",
+      "category": "emotions",
+      "literal_meaning": "hungry + angry",
+      "cultural_meaning": "Irritable or short-tempered because of hunger.",
+      "formality": "informal",
+      "usage_context": "Everyday casual conversation about mood and food.",
+      "equivalents": {
+        "tamil": {
+          "term": "பசி கோபம்",
+          "transliteration": "pasi kobam",
+          "notes": "Literal compound 'hunger anger' — used informally, mirroring the English blend."
+        },
+        "japanese": {
+          "term": "腹が減って機嫌が悪い (hara ga hette kigen ga warui)",
+          "romaji": "hara ga hette kigen ga warui",
+          "notes": "'Bad mood from an empty stomach' — descriptive phrase; no single slang word exists yet in mainstream Japanese."
+        }
+      }
+    },
+    {
+      "id": "en_015",
+      "term": "clout",
+      "language": "english",
+      "category": "social_status",
+      "literal_meaning": "influence/power",
+      "cultural_meaning": "Social influence or popularity, especially online.",
+      "formality": "very_informal",
+      "usage_context": "Social media culture, discussions of influencers and popularity.",
+      "equivalents": {
+        "tamil": {
+          "term": "பேர் (peru) / fame",
+          "transliteration": "peru",
+          "notes": "'Name/reputation' — used colloquially for social clout, often mixed with the English word 'fame'."
+        },
+        "japanese": {
+          "term": "影響力 (eikyouryoku)",
+          "romaji": "eikyouryoku",
+          "notes": "'Influence/power' — formal term for clout, though youth also use 'バズる (bazuru)' for going viral."
+        }
+      }
+    },
+    {
+      "id": "ta_001",
+      "term": "மச்சி",
+      "language": "tamil",
+      "category": "address_terms",
+      "literal_meaning": "brother-in-law (literally)",
+      "cultural_meaning": "Casual, affectionate term for a close male friend, similar to 'bro' or 'dude'.",
+      "formality": "very_informal",
+      "usage_context": "Used constantly among young Tamil men regardless of actual family relation.",
+      "romanization": "machi",
+      "equivalents": {
+        "english": {
+          "term": "bro / dude",
+          "notes": "Functionally identical casual address term for a close friend."
+        },
+        "japanese": {
+          "term": "相棒 (aibou)",
+          "romaji": "aibou",
+          "notes": "'Partner/buddy' — close in spirit though less universally used as a casual greeting term."
+        }
+      }
+    },
+    {
+      "id": "ta_002",
+      "term": "என்னடா",
+      "language": "tamil",
+      "category": "exclamations",
+      "literal_meaning": "what, da (informal masculine particle)",
+      "cultural_meaning": "Casual, sometimes exasperated exclamation meaning 'what is it?!' or 'what's going on?'",
+      "formality": "very_informal",
+      "usage_context": "Between close friends or family, can express surprise, irritation, or curiosity.",
+      "romanization": "ennada",
+      "equivalents": {
+        "english": {
+          "term": "what the heck / what's up",
+          "notes": "Depending on tone, matches either an exasperated 'what?!' or a casual 'what's up'."
+        },
+        "japanese": {
+          "term": "何だよ (nan da yo)",
+          "romaji": "nan da yo",
+          "notes": "Informal, slightly annoyed 'what is it' — very close in register to 'ennada'."
+        }
+      }
+    },
+    {
+      "id": "ta_003",
+      "term": "செம",
+      "language": "tamil",
+      "category": "youth_slang",
+      "literal_meaning": "originally 'red/pure', repurposed as intensifier",
+      "cultural_meaning": "Used as an intensifier meaning 'really/very' or on its own to mean 'awesome'.",
+      "formality": "very_informal",
+      "usage_context": "Extremely common in modern colloquial Tamil, especially among youth, in Tamil cinema dialogue too.",
+      "romanization": "sema",
+      "equivalents": {
+        "english": {
+          "term": "super / really",
+          "notes": "Used as an intensifier, e.g. 'sema fun' = 'really fun'; also stands alone to mean 'awesome'."
+        },
+        "japanese": {
+          "term": "超 (chou)",
+          "romaji": "chou",
+          "notes": "Common intensifier prefix meaning 'super/extremely', e.g. 超楽しい (chou tanoshii) = 'super fun'."
+        }
+      }
+    },
+    {
+      "id": "ta_004",
+      "term": "வெட்டி",
+      "language": "tamil",
+      "category": "personality_descriptors",
+      "literal_meaning": "idle/useless (literally 'cut')",
+      "cultural_meaning": "Describes someone who is a busybody or nosy gossip, or wastes time on trivial matters.",
+      "formality": "informal",
+      "usage_context": "Used to describe or scold someone being unnecessarily nosy or idle.",
+      "romanization": "vetti",
+      "equivalents": {
+        "english": {
+          "term": "busybody / nosy",
+          "notes": "Matches the sense of someone poking into others' affairs unnecessarily."
+        },
+        "japanese": {
+          "term": "お節介 (osekkai)",
+          "romaji": "osekkai",
+          "notes": "'Meddlesome/overly interfering' — close cultural equivalent for a nosy busybody."
+        }
+      }
+    },
+    {
+      "id": "ta_005",
+      "term": "தலைவலி",
+      "language": "tamil",
+      "category": "emotions",
+      "literal_meaning": "headache",
+      "cultural_meaning": "Used figuratively to describe an annoying person or troublesome situation, not just physical pain.",
+      "formality": "informal",
+      "usage_context": "Complaining casually about a person or hassle.",
+      "romanization": "thalaivali",
+      "equivalents": {
+        "english": {
+          "term": "headache (figurative)",
+          "notes": "Same figurative use in English: 'he's such a headache'."
+        },
+        "japanese": {
+          "term": "頭が痛い (atama ga itai)",
+          "romaji": "atama ga itai",
+          "notes": "Also used figuratively for an annoying problem or person, directly parallel."
+        }
+      }
+    },
+    {
+      "id": "ta_006",
+      "term": "கலாய்க்கிறது",
+      "language": "tamil",
+      "category": "social_interaction",
+      "literal_meaning": "to tease/mock playfully",
+      "cultural_meaning": "Friendly teasing or ribbing among friends, generally good-natured rather than cruel.",
+      "formality": "informal",
+      "usage_context": "Common among close friend groups, part of everyday banter culture.",
+      "romanization": "kalaikkirathu",
+      "equivalents": {
+        "english": {
+          "term": "clowning / roasting (playfully)",
+          "notes": "Friendly teasing among friends, similar tone and social function."
+        },
+        "japanese": {
+          "term": "いじる (ijiru)",
+          "romaji": "ijiru",
+          "notes": "Playful teasing/ribbing between friends, a defining feature of Japanese comedic 'manzai'-style banter."
+        }
+      }
+    },
+    {
+      "id": "ta_007",
+      "term": "பஞ்சாய்த்து",
+      "language": "tamil",
+      "category": "social_interaction",
+      "literal_meaning": "village council mediation",
+      "cultural_meaning": "Used informally to mean settling a dispute or having a serious talk to resolve conflict.",
+      "formality": "neutral",
+      "usage_context": "Rooted in traditional village council (panchayat) systems, now used loosely for any mediation.",
+      "romanization": "panchayathu",
+      "equivalents": {
+        "english": {
+          "term": "sort it out / mediation",
+          "notes": "Functional equivalent to 'let's have a talk and settle this'."
+        },
+        "japanese": {
+          "term": "話し合い (hanashiai)",
+          "romaji": "hanashiai",
+          "notes": "'Discussion/mediation to resolve a conflict' — parallel formal-but-communal resolution process."
+        }
+      }
+    },
+    {
+      "id": "ta_008",
+      "term": "மொக்க",
+      "language": "tamil",
+      "category": "youth_slang",
+      "literal_meaning": "bud/unopened flower (literally)",
+      "cultural_meaning": "Slang for something lame, boring, or a letdown — often used for bad jokes or disappointing outcomes.",
+      "formality": "very_informal",
+      "usage_context": "Youth slang, common in casual banter and online Tamil meme culture.",
+      "romanization": "mokka",
+      "equivalents": {
+        "english": {
+          "term": "lame / cringe",
+          "notes": "Used similarly to dismiss something as unimpressive or embarrassing."
+        },
+        "japanese": {
+          "term": "寒い (samui)",
+          "romaji": "samui",
+          "notes": "Literally 'cold' but slang for a joke or moment that falls flat/is cringe-inducing."
+        }
+      }
+    },
+    {
+      "id": "ta_009",
+      "term": "ஆஹா",
+      "language": "tamil",
+      "category": "exclamations",
+      "literal_meaning": "wow (interjection)",
+      "cultural_meaning": "Exclamation of admiration or, sarcastically, mock-admiration.",
+      "formality": "neutral",
+      "usage_context": "Can be sincere praise or dripping sarcasm depending on tone.",
+      "romanization": "aaha",
+      "equivalents": {
+        "english": {
+          "term": "wow (sincere or sarcastic)",
+          "notes": "Direct equivalent, tone-dependent just like the Tamil original."
+        },
+        "japanese": {
+          "term": "すごいね (sugoi ne)",
+          "romaji": "sugoi ne",
+          "notes": "Can be genuine praise or, with a flat tone, sarcastic — same dual usage."
+        }
+      }
+    },
+    {
+      "id": "ta_010",
+      "term": "டூ முச்",
+      "language": "tamil",
+      "category": "youth_slang",
+      "literal_meaning": "borrowed from English 'too much'",
+      "cultural_meaning": "Describes something overwhelming, excessive, or 'a lot to handle' — can be positive or negative.",
+      "formality": "very_informal",
+      "usage_context": "Tanglish (Tamil-English) hybrid slang common among urban youth.",
+      "romanization": "too much",
+      "equivalents": {
+        "english": {
+          "term": "too much / a lot",
+          "notes": "Directly borrowed; same meaning and usage as the English phrase."
+        },
+        "japanese": {
+          "term": "半端ない (hanpa nai)",
+          "romaji": "hanpa nai",
+          "notes": "'Not halfway/no joke' — used for something overwhelming or extreme, matching the 'too much' intensity."
+        }
+      }
+    },
+    {
+      "id": "ja_001",
+      "term": "やばい",
+      "language": "japanese",
+      "category": "youth_slang",
+      "literal_meaning": "dangerous (original meaning)",
+      "cultural_meaning": "Extremely versatile slang for 'amazing', 'terrible', 'crazy', or 'risky' — meaning entirely depends on tone and context.",
+      "formality": "very_informal",
+      "usage_context": "Used constantly by all ages in casual speech, one of the most common slang words in Japanese.",
+      "romaji": "yabai",
+      "equivalents": {
+        "english": {
+          "term": "insane / crazy (context-dependent)",
+          "notes": "Matches the flexible positive-or-negative intensity of 'yabai' depending on tone."
+        },
+        "tamil": {
+          "term": "பயங்கரம்",
+          "transliteration": "bayangaram",
+          "notes": "'Terrifying/terrific' — also flexible, used for both something amazing and something alarming."
+        }
+      }
+    },
+    {
+      "id": "ja_002",
+      "term": "空気を読む",
+      "language": "japanese",
+      "category": "social_interaction",
+      "literal_meaning": "to read the air",
+      "cultural_meaning": "The social skill of sensing unspoken mood/atmosphere and behaving appropriately; failing to do so is 'KY' (kuuki yomenai).",
+      "formality": "neutral",
+      "usage_context": "Deeply embedded in Japanese social etiquette, taught implicitly from childhood.",
+      "romaji": "kuuki wo yomu",
+      "equivalents": {
+        "english": {
+          "term": "read the room",
+          "notes": "Very close equivalent — sensing social mood and adjusting behavior accordingly."
+        },
+        "tamil": {
+          "term": "சூழ்நிலையை புரிஞ்சுக்கோ",
+          "transliteration": "soozhnilaiyai purinjuko",
+          "notes": "'Understand the situation/context' — used similarly to urge social awareness, though less codified as a named concept."
+        }
+      }
+    },
+    {
+      "id": "ja_003",
+      "term": "マジで",
+      "language": "japanese",
+      "category": "internet_slang",
+      "literal_meaning": "seriously",
+      "cultural_meaning": "Used to express sincerity/emphasis, or as a question meaning 'really?!'",
+      "formality": "very_informal",
+      "usage_context": "Extremely common casual speech among all ages, especially youth.",
+      "romaji": "maji de",
+      "equivalents": {
+        "english": {
+          "term": "for real / seriously",
+          "notes": "Direct equivalent, used both as emphasis and incredulous question."
+        },
+        "tamil": {
+          "term": "ரியலா",
+          "transliteration": "reala",
+          "notes": "Tanglish borrowing of 'real' + Tamil suffix, used exactly like 'maji de' as incredulous confirmation."
+        }
+      }
+    },
+    {
+      "id": "ja_004",
+      "term": "KY (空気読めない)",
+      "language": "japanese",
+      "category": "social_interaction",
+      "literal_meaning": "can't read the air",
+      "cultural_meaning": "A person who is socially oblivious and fails to sense group mood or unspoken norms; can be a mild insult.",
+      "formality": "informal",
+      "usage_context": "Common in workplace and school social criticism, especially popularized in the 2000s.",
+      "romaji": "kuuki yomenai",
+      "equivalents": {
+        "english": {
+          "term": "socially oblivious / tone-deaf",
+          "notes": "Matches the criticism of someone missing social cues."
+        },
+        "tamil": {
+          "term": "புரியாத ஆள்",
+          "transliteration": "puriyaadha aal",
+          "notes": "'A person who doesn't get it' — informal way to describe someone socially clueless."
+        }
+      }
+    },
+    {
+      "id": "ja_005",
+      "term": "推し",
+      "language": "japanese",
+      "category": "fandom_culture",
+      "literal_meaning": "one's push/favorite",
+      "cultural_meaning": "A person's favorite idol, character, or celebrity that they actively support and promote; central to modern fan culture.",
+      "formality": "informal",
+      "usage_context": "Idol fandom, anime fandom, widely used in youth pop culture and merchandising.",
+      "romaji": "oshi",
+      "equivalents": {
+        "english": {
+          "term": "bias (in fandom slang) / favorite",
+          "notes": "'Bias' is the direct fandom-culture loanword equivalent, especially in K-pop/J-pop fan communities."
+        },
+        "tamil": {
+          "term": "favorite nadigar/nadigai",
+          "transliteration": "favorite நடிகர்",
+          "notes": "'Favorite actor/actress' — Tamil fan culture centers more on cinema stars than idol groups, but the devoted-fan concept parallels closely."
+        }
+      }
+    },
+    {
+      "id": "ja_006",
+      "term": "微妙",
+      "language": "japanese",
+      "category": "emotions",
+      "literal_meaning": "subtle/delicate",
+      "cultural_meaning": "Used to express lukewarm, ambiguous, or 'meh' feelings about something without directly criticizing it — reflects Japanese indirectness.",
+      "formality": "neutral",
+      "usage_context": "Polite way to express dissatisfaction or uncertainty without being blunt.",
+      "romaji": "bimyou",
+      "equivalents": {
+        "english": {
+          "term": "meh / iffy",
+          "notes": "Captures the lukewarm, noncommittal tone, though English 'meh' is more casual than the socially strategic Japanese usage."
+        },
+        "tamil": {
+          "term": "சரியில்ல",
+          "transliteration": "sariyilla",
+          "notes": "'Not quite right' — softer way of expressing dissatisfaction, though less indirect than the Japanese cultural norm."
+        }
+      }
+    },
+    {
+      "id": "ja_007",
+      "term": "リア充",
+      "language": "japanese",
+      "category": "internet_slang",
+      "literal_meaning": "real-life fulfilled",
+      "cultural_meaning": "Someone whose real (offline) life is fulfilling — good friends, relationships, social life — often used enviously/sarcastically by those who feel isolated (e.g. otaku culture).",
+      "formality": "informal",
+      "usage_context": "Internet forums, used both admiringly and mockingly.",
+      "romaji": "riajuu",
+      "equivalents": {
+        "english": {
+          "term": "normie (with envy) / touch grass energy",
+          "notes": "Captures the online-culture contrast between socially fulfilled people and terminally-online ones, though connotation direction is reversed from 'normie'."
+        },
+        "tamil": {
+          "term": "life settle aayiduchu",
+          "transliteration": "லைஃப் செட்டில் ஆயிடுச்சு",
+          "notes": "'Life has settled/is sorted' — used for someone whose life seems enviably put-together."
+        }
+      }
+    },
+    {
+      "id": "ja_008",
+      "term": "ドン引き",
+      "language": "japanese",
+      "category": "emotions",
+      "literal_meaning": "to recoil/pull back hard",
+      "cultural_meaning": "The reaction of being taken aback or turned off by someone's awkward or excessive behavior.",
+      "formality": "informal",
+      "usage_context": "Reacting to a socially awkward or cringeworthy moment.",
+      "romaji": "donbiki",
+      "equivalents": {
+        "english": {
+          "term": "cringe / second-hand embarrassment",
+          "notes": "Matches the recoiling reaction to someone else's awkward behavior."
+        },
+        "tamil": {
+          "term": "வெட்கமா இருக்கு",
+          "transliteration": "vetkama irukku",
+          "notes": "'It's embarrassing' — used for cringe-inducing moments, though slightly milder than 'donbiki'."
+        }
+      }
+    },
+    {
+      "id": "ja_009",
+      "term": "積読",
+      "language": "japanese",
+      "category": "lifestyle",
+      "literal_meaning": "stacking + reading (pun)",
+      "cultural_meaning": "The habit of buying books and letting them pile up unread; affectionately self-deprecating term among book lovers.",
+      "formality": "neutral",
+      "usage_context": "Common among readers/bibliophiles to describe their unread book pile.",
+      "romaji": "tsundoku",
+      "equivalents": {
+        "english": {
+          "term": "tsundoku (loanword) / unread book pile",
+          "notes": "The term has been directly adopted into English internet culture as a loanword with no true native equivalent."
+        },
+        "tamil": {
+          "term": "படிக்காம வச்சிருக்கிற புத்தகங்கள்",
+          "transliteration": "padikkaama vachirukkira puthagangal",
+          "notes": "Descriptive phrase for 'books kept unread' — no dedicated slang term exists in Tamil."
+        }
+      }
+    },
+    {
+      "id": "ja_010",
+      "term": "ワンチャン",
+      "language": "japanese",
+      "category": "youth_slang",
+      "literal_meaning": "one chance",
+      "cultural_meaning": "Slang for 'there's a chance/maybe possibly', expressing a small but real possibility.",
+      "formality": "very_informal",
+      "usage_context": "Youth slang, borrowed from gaming culture ('one chance' to win).",
+      "romaji": "wanchan",
+      "equivalents": {
+        "english": {
+          "term": "there's a chance / maybe",
+          "notes": "Directly parallels the 'small possibility' meaning, especially in casual gaming-adjacent speech."
+        },
+        "tamil": {
+          "term": "chance இருக்கு",
+          "transliteration": "chance irukku",
+          "notes": "Tanglish 'there's a chance' — used the same casual way to note a slim possibility."
+        }
+      }
+    }
+  ]
+}
