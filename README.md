@@ -1,8 +1,11 @@
-<html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>LinguaX — AI Cultural &amp; Slang Translator</title>
+    <title>LinguaX — AI Cultural & Slang Translator</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -22,7 +25,7 @@
 
                 <div>
                     <h1>Lingua<span>X</span></h1>
-                    <p>AI Cultural &amp; Slang Translator</p>
+                    <p>AI Cultural & Slang Translator</p>
                 </div>
             </div>
 
@@ -68,9 +71,12 @@
 
             </div>
 
-            <textarea id="inputText" placeholder="Try something like:
+            <textarea
+                id="inputText"
+                placeholder="Try something like:
 マジで、このライブやばい！
-மச்சி, அந்த படம் செம!"></textarea>
+மச்சி, அந்த படம் செம!"
+            ></textarea>
 
             <div class="input-footer">
 
@@ -78,7 +84,7 @@
                     Supports English · Tamil · Japanese
                 </span>
 
-                <button onclick="analyze()" id="analyzeButton" style="opacity: 1;">
+                <button onclick="analyze()" id="analyzeButton">
                     <span>Analyze</span>
                     <span class="arrow">→</span>
                 </button>
@@ -89,130 +95,20 @@
 
 
         <!-- LOADER -->
-        <div id="loader" style="display: none;">
+        <div id="loader">
 
             <div class="loader-ring"></div>
 
             <div>
                 <strong>Understanding context...</strong>
-                <small>Analyzing language, slang &amp; culture</small>
+                <small>Analyzing language, slang & culture</small>
             </div>
 
         </div>
 
 
         <!-- RESULTS -->
-        <section id="result" class="results">
-
-            <div class="result-card language-card">
-
-                <div class="card-label">
-                    <span class="card-icon">◉</span>
-                    Language
-                </div>
-
-                <div class="card-value">
-                    Japanese
-                </div>
-
-            </div>
-
-
-            <div class="result-card tone-card">
-
-                <div class="card-label">
-                    <span class="card-icon">◌</span>
-                    Tone
-                </div>
-
-                <div class="card-value">
-                    Neutral
-                </div>
-
-            </div>
-
-
-            <div class="result-card culture-card">
-
-                <div class="card-label">
-                    <span class="card-icon">✦</span>
-                    Cultural Context
-                </div>
-
-                
-
-                    <div class="slang-item">
-
-                        <div class="culture-title">
-                            マジで
-                        </div>
-
-                        <div class="culture-meaning">
-                            Emphatic confirmation, common across all ages, softer in tone than English slang equivalents.
-                        </div>
-
-                        
-                            <div class="meta">
-                                Cultural concept:
-                                expressing_strong_agreement
-                            </div>
-                            
-
-                    </div>
-
-                
-
-            </div>
-
-
-            <div class="result-card slang-card">
-
-                <div class="card-label">
-                    <span class="card-icon">◆</span>
-                    Slang Intelligence
-                </div>
-
-                
-                    <div class="slang-item">
-
-                        <div class="slang-word">
-                            マジで
-                        </div>
-
-                        <div class="slang-meaning">
-                            Used to express sincerity/emphasis, or as a question meaning 'really?!'
-                        </div>
-
-                        <div class="meta">
-                            internet_slang
-                            ·
-                            japanese
-                        </div>
-
-                    </div>
-                
-
-            </div>
-
-
-            <div class="result-card translation-card">
-
-                <div class="card-label">
-                    <span class="card-icon">↔</span>
-                    AI Interpretation
-                </div>
-
-                <div class="culture-meaning">
-
-                    Your message was analyzed for
-                    language, tone, slang and cultural
-                    context.
-
-                </div>
-
-            </div>
-
-        </section>
+        <section id="result" class="results"></section>
 
 
         <!-- FOOTER -->
@@ -231,44 +127,6 @@
 
     <script src="script.js"></script>
 
-<!-- Code injected by live-server -->
-<script>
-	// <![CDATA[  <-- For SVG support
-	if ('WebSocket' in window) {
-		(function () {
-			function refreshCSS() {
-				var sheets = [].slice.call(document.getElementsByTagName("link"));
-				var head = document.getElementsByTagName("head")[0];
-				for (var i = 0; i < sheets.length; ++i) {
-					var elem = sheets[i];
-					var parent = elem.parentElement || head;
-					parent.removeChild(elem);
-					var rel = elem.rel;
-					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-					}
-					parent.appendChild(elem);
-				}
-			}
-			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-			var address = protocol + window.location.host + window.location.pathname + '/ws';
-			var socket = new WebSocket(address);
-			socket.onmessage = function (msg) {
-				if (msg.data == 'reload') window.location.reload();
-				else if (msg.data == 'refreshcss') refreshCSS();
-			};
-			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-				console.log('Live reload enabled.');
-				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-			}
-		})();
-	}
-	else {
-		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-	}
-	// ]]>
-</script>
+</body>
 
-
-</body></html>
+</html>
