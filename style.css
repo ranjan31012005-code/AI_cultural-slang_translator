@@ -877,4 +877,883 @@ footer {
 
     }
 
+}@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+
+:root {
+
+    --bg: #050807;
+    --surface: rgba(15, 24, 21, 0.78);
+    --surface-light: rgba(25, 38, 33, 0.82);
+
+    --green: #19e68c;
+    --green-dark: #0c9f61;
+
+    --cyan: #22d3ee;
+    --violet: #9b7cff;
+    --gold: #f5c451;
+
+    --text: #f1f7f4;
+    --muted: #8b9b94;
+
+    --border: rgba(255,255,255,0.08);
+
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(circle at 15% 15%, rgba(25,230,140,0.10), transparent 30%),
+        radial-gradient(circle at 85% 75%, rgba(155,124,255,0.10), transparent 30%),
+        var(--bg);
+
+    color: var(--text);
+
+    font-family: "Inter", sans-serif;
+
+    overflow-x: hidden;
+
+}
+
+
+/* --------------------------------
+   BACKGROUND
+-------------------------------- */
+
+.background-glow {
+
+    position: fixed;
+
+    width: 350px;
+    height: 350px;
+
+    border-radius: 50%;
+
+    filter: blur(120px);
+
+    opacity: 0.12;
+
+    pointer-events: none;
+
+}
+
+
+.glow-one {
+
+    background: var(--green);
+
+    top: -150px;
+    left: -150px;
+
+}
+
+
+.glow-two {
+
+    background: var(--violet);
+
+    right: -150px;
+    bottom: -150px;
+
+}
+
+
+/* --------------------------------
+   APP
+-------------------------------- */
+
+.app {
+
+    width: min(1180px, 92%);
+
+    margin: auto;
+
+    padding: 30px 0 40px;
+
+}
+
+
+/* --------------------------------
+   TOPBAR
+-------------------------------- */
+
+.topbar {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 70px;
+
+}
+
+
+.brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+}
+
+
+.brand-icon {
+
+    width: 42px;
+    height: 42px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(135deg,
+        var(--green),
+        var(--cyan));
+
+    color: #04120c;
+
+    font-size: 20px;
+
+    box-shadow:
+        0 0 25px rgba(25,230,140,.25);
+
+}
+
+
+.brand h1 {
+
+    font-family: "Space Grotesk";
+
+    font-size: 22px;
+
+}
+
+
+.brand h1 span {
+
+    color: var(--green);
+
+}
+
+
+.brand p {
+
+    color: var(--muted);
+
+    font-size: 11px;
+
+    margin-top: 2px;
+
+}
+
+
+.status {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 9px 13px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 50px;
+
+    color: var(--muted);
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+}
+
+
+.status-dot {
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: var(--green);
+
+    box-shadow: 0 0 10px var(--green);
+
+}
+
+
+/* --------------------------------
+   HERO
+-------------------------------- */
+
+.hero {
+
+    max-width: 780px;
+
+    margin-bottom: 38px;
+
+}
+
+
+.hero-badge {
+
+    display: inline-block;
+
+    padding: 7px 12px;
+
+    border-radius: 50px;
+
+    background: rgba(25,230,140,.08);
+
+    border: 1px solid rgba(25,230,140,.18);
+
+    color: var(--green);
+
+    font-size: 10px;
+
+    letter-spacing: 1.4px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.hero h2 {
+
+    font-family: "Space Grotesk";
+
+    font-size: clamp(42px, 6vw, 76px);
+
+    line-height: 0.98;
+
+    letter-spacing: -3px;
+
+}
+
+
+.hero h2 span {
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--green),
+            var(--cyan),
+            var(--violet)
+        );
+
+    -webkit-background-clip: text;
+
+    color: transparent;
+
+}
+
+
+.hero p {
+
+    color: var(--muted);
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    max-width: 600px;
+
+    margin-top: 20px;
+
+}
+
+
+/* --------------------------------
+   INPUT PANEL
+-------------------------------- */
+
+.conversation-panel {
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: 28px;
+
+    padding: 25px;
+
+    backdrop-filter: blur(25px);
+
+    box-shadow:
+        0 25px 80px rgba(0,0,0,.25);
+
+}
+
+
+.panel-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    margin-bottom: 18px;
+
+}
+
+
+.eyebrow {
+
+    color: var(--green);
+
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+.panel-header h3 {
+
+    font-family: "Space Grotesk";
+
+    font-size: 20px;
+
+    margin-top: 5px;
+
+}
+
+
+.ai-symbol {
+
+    color: var(--gold);
+
+    font-size: 24px;
+
+}
+
+
+textarea {
+
+    width: 100%;
+
+    min-height: 150px;
+
+    resize: vertical;
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    background: rgba(0,0,0,.25);
+
+    color: var(--text);
+
+    padding: 20px;
+
+    font-family: inherit;
+
+    font-size: 17px;
+
+    line-height: 1.6;
+
+    outline: none;
+
+    transition: .3s;
+
+}
+
+
+textarea:focus {
+
+    border-color: rgba(25,230,140,.45);
+
+    box-shadow:
+        0 0 0 4px rgba(25,230,140,.05);
+
+}
+
+
+textarea::placeholder {
+
+    color: #5f7169;
+
+}
+
+
+.input-footer {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-top: 15px;
+
+}
+
+
+.hint {
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+}
+
+
+button {
+
+    border: none;
+
+    cursor: pointer;
+
+    color: #03100a;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--green),
+            var(--cyan)
+        );
+
+    padding: 13px 20px;
+
+    border-radius: 12px;
+
+    font-weight: 700;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    transition: .3s;
+
+}
+
+
+button:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 30px rgba(25,230,140,.2);
+
+}
+
+
+.arrow {
+
+    font-size: 20px;
+
+}
+
+
+/* --------------------------------
+   LOADER
+-------------------------------- */
+
+#loader {
+
+    display: none;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin: 25px 0;
+
+    padding: 18px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+}
+
+
+#loader small {
+
+    display: block;
+
+    color: var(--muted);
+
+    margin-top: 4px;
+
+}
+
+
+.loader-ring {
+
+    width: 32px;
+    height: 32px;
+
+    border: 3px solid rgba(255,255,255,.1);
+
+    border-top-color: var(--green);
+
+    border-right-color: var(--cyan);
+
+    border-radius: 50%;
+
+    animation: spin 1s linear infinite;
+
+}
+
+
+@keyframes spin {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* --------------------------------
+   BENTO RESULTS
+-------------------------------- */
+
+.results {
+
+    display: grid;
+
+    grid-template-columns: repeat(12, 1fr);
+
+    gap: 14px;
+
+    margin-top: 18px;
+
+}
+
+
+.result-card {
+
+    background: var(--surface-light);
+
+    border: 1px solid var(--border);
+
+    border-radius: 22px;
+
+    padding: 22px;
+
+    backdrop-filter: blur(20px);
+
+    animation: appear .45s ease both;
+
+}
+
+
+@keyframes appear {
+
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* language */
+
+.language-card {
+
+    grid-column: span 4;
+
+}
+
+
+/* tone */
+
+.tone-card {
+
+    grid-column: span 4;
+
+}
+
+
+/* cultural */
+
+.culture-card {
+
+    grid-column: span 4;
+
+    border-color: rgba(245,196,81,.18);
+
+}
+
+
+/* slang */
+
+.slang-card {
+
+    grid-column: span 6;
+
+}
+
+
+/* translation */
+
+.translation-card {
+
+    grid-column: span 6;
+
+}
+
+
+.card-label {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    color: var(--muted);
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 15px;
+
+}
+
+
+.card-value {
+
+    font-family: "Space Grotesk";
+
+    font-size: 25px;
+
+}
+
+
+.card-icon {
+
+    color: var(--green);
+
+}
+
+
+/* --------------------------------
+   SLANG ITEMS
+-------------------------------- */
+
+.slang-item {
+
+    padding: 15px 0;
+
+    border-top: 1px solid var(--border);
+
+}
+
+
+.slang-word {
+
+    color: var(--cyan);
+
+    font-weight: 700;
+
+    font-size: 17px;
+
+}
+
+
+.slang-meaning {
+
+    color: var(--text);
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    margin-top: 5px;
+
+}
+
+
+.meta {
+
+    color: var(--muted);
+
+    font-size: 11px;
+
+    margin-top: 8px;
+
+}
+
+
+/* --------------------------------
+   CULTURAL CONTEXT
+-------------------------------- */
+
+.culture-card {
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(245,196,81,.08),
+            rgba(25,230,140,.04)
+        );
+
+}
+
+
+.culture-title {
+
+    color: var(--gold);
+
+    font-family: "Space Grotesk";
+
+    font-size: 22px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.culture-meaning {
+
+    color: #d4ded9;
+
+    line-height: 1.7;
+
+    font-size: 14px;
+
+}
+
+
+/* --------------------------------
+   FOOTER
+-------------------------------- */
+
+footer {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color: #53635c;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+    margin-top: 45px;
+
+}
+
+
+/* --------------------------------
+   MOBILE
+-------------------------------- */
+
+@media(max-width:750px) {
+
+    .app {
+
+        width: 94%;
+
+    }
+
+
+    .topbar {
+
+        margin-bottom: 45px;
+
+    }
+
+
+    .status {
+
+        display: none;
+
+    }
+
+
+    .hero h2 {
+
+        font-size: 43px;
+
+        letter-spacing: -2px;
+
+    }
+
+
+    .conversation-panel {
+
+        padding: 18px;
+
+        border-radius: 20px;
+
+    }
+
+
+    .input-footer {
+
+        align-items: flex-end;
+
+        gap: 15px;
+
+    }
+
+
+    .hint {
+
+        max-width: 180px;
+
+    }
+
+
+    .results {
+
+        display: flex;
+
+        flex-direction: column;
+
+    }
+
+
+    .result-card {
+
+        width: 100%;
+
+    }
+
+
+    footer {
+
+        gap: 10px;
+
+        flex-wrap: wrap;
+
+    }
+
 }
