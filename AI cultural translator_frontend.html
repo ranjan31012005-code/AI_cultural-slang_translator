@@ -1,34 +1,132 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Cultural & Slang Translator</title>
+
+    <title>LinguaX — AI Cultural & Slang Translator</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<div class="container">
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
 
-    <h1>🌍 AI Cultural & Slang Translator</h1>
+    <main class="app">
 
-    <textarea
-        id="inputText"
-        placeholder="Enter a sentence..."
-    ></textarea>
+        <!-- HEADER -->
+        <header class="topbar">
 
-    <button onclick="analyze()">
-        Analyze
-    </button>
+            <div class="brand">
+                <div class="brand-icon">◉</div>
 
-    <div id="loader"></div>
+                <div>
+                    <h1>Lingua<span>X</span></h1>
+                    <p>AI Cultural & Slang Translator</p>
+                </div>
+            </div>
 
-    <div id="result"></div>
+            <div class="status">
+                <span class="status-dot"></span>
+                AI ONLINE
+            </div>
 
-</div>
+        </header>
 
-<script src="script.js"></script>
+
+        <!-- HERO -->
+        <section class="hero">
+
+            <div class="hero-badge">
+                ✦ CONTEXT-AWARE LANGUAGE AI
+            </div>
+
+            <h2>
+                Understand the
+                <span>meaning behind words.</span>
+            </h2>
+
+            <p>
+                Translate language, slang, tone and cultural context —
+                not just words.
+            </p>
+
+        </section>
+
+
+        <!-- CONVERSATIONAL INPUT -->
+        <section class="conversation-panel">
+
+            <div class="panel-header">
+
+                <div>
+                    <span class="eyebrow">YOUR MESSAGE</span>
+                    <h3>What do you want to understand?</h3>
+                </div>
+
+                <span class="ai-symbol">✦</span>
+
+            </div>
+
+            <textarea
+                id="inputText"
+                placeholder="Try something like:
+マジで、このライブやばい！
+மச்சி, அந்த படம் செம!"
+            ></textarea>
+
+            <div class="input-footer">
+
+                <span class="hint">
+                    Supports English · Tamil · Japanese
+                </span>
+
+                <button onclick="analyze()" id="analyzeButton">
+                    <span>Analyze</span>
+                    <span class="arrow">→</span>
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- LOADER -->
+        <div id="loader">
+
+            <div class="loader-ring"></div>
+
+            <div>
+                <strong>Understanding context...</strong>
+                <small>Analyzing language, slang & culture</small>
+            </div>
+
+        </div>
+
+
+        <!-- RESULTS -->
+        <section id="result" class="results"></section>
+
+
+        <!-- FOOTER -->
+        <footer>
+
+            <span>LINGUAX</span>
+
+            <span>AI Cultural Intelligence</span>
+
+            <span>© 2026</span>
+
+        </footer>
+
+    </main>
+
+
+    <script src="script.js"></script>
 
 </body>
+
 </html>
