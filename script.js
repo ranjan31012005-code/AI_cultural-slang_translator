@@ -1,135 +1,268 @@
 async function analyze() {
 
-    const text = document.getElementById("inputText").value;
+    const input = document.getElementById("inputText");
+    const result = document.getElementById("result");
+    const loader = document.getElementById("loader");
+    const button = document.getElementById("analyzeButton");
 
-    if (text.trim() === "") {
-        alert("Please enter some text.");
+    const text = input.value.trim();
+
+    if (!text) {
+        alert("Please enter a sentence.");
         return;
     }
 
-    document.getElementById("loader").style.display = "block";
-    document.getElementById("result").innerHTML = "";
+    result.innerHTML = "";
+
+    loader.style.display = "flex";
+    button.disabled = true;
+    button.style.opacity = "0.6";
 
     try {
 
-        const response = await fetch("http://127.0.0.1:5000/analyze", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                text: text
-            })
-        });
+        const response = await fetch(
+            "http://127.0.0.1:5000/analyze",
+            {
+                method: "POST",
+
+                headers: {
+                    "Content-Type": "application/json"
+                },
+
+                body: JSON.stringify({
+                    text: text
+                })
+            }
+        );
+
+        if (!response.ok) {
+            throw new Error("Backend error");
+        }
 
         const data = await response.json();
 
-        document.getElementById("loader").style.display = "none";
+        loader.style.display = "none";
 
-        // -----------------------------
-        // Create Slang HTML
-        // -----------------------------
+        // -------------------------
+        // SLANG
+        // -------------------------
+
         let slangHTML = "";
 
-        if (Object.keys(data.slang_detected).length > 0) {
+        if (
+            data.slang_detected &&
+            Object.keys(data.slang_detected).length > 0
+        ) {
 
             for (const word in data.slang_detected) {
 
+                const item = data.slang_detected[word];
+
                 slangHTML += `
-                <div class="card">
+                    <div class="slang-item">
 
-                    <h4>🔹 ${word}</h4>
+                        <div class="slang-word">
+                            ${word}
+                        </div>
 
-                    <p><strong>Meaning:</strong><br>
-                    ${data.slang_detected[word].meaning}</p>
+                        <div class="slang-meaning">
+                            ${item.meaning || "Meaning unavailable"}
+                        </div>
 
-                    <p><strong>Category:</strong>
-                    ${data.slang_detected[word].category}</p>
+                        <div class="meta">
+                            ${item.category || "General"}
+                            ·
+                            ${item.language || "Unknown"}
+                        </div>
 
-                    <p><strong>Language:</strong>
-                    ${data.slang_detected[word].language}</p>
-
-                </div>
+                    </div>
                 `;
             }
 
         } else {
 
-            slangHTML = "<p>No slang detected.</p>";
+            slangHTML = `
+                <p class="culture-meaning">
+                    No slang detected.
+                </p>
+            `;
 
         }
 
-        // -----------------------------
-        // Create Cultural HTML
-        // -----------------------------
+
+        // -------------------------
+        // CULTURAL MEANING
+        // -------------------------
+
         let culturalHTML = "";
 
-        if (Object.keys(data.cultural_meaning).length > 0) {
+        if (
+            data.cultural_meaning &&
+            Object.keys(data.cultural_meaning).length > 0
+        ) {
 
-            for (const key in data.cultural_meaning) {
+            for (
+                const language in data.cultural_meaning
+            ) {
 
-                const item = data.cultural_meaning[key];
+                const item =
+                    data.cultural_meaning[language];
 
                 culturalHTML += `
-                <div class="card">
 
-                    <h4>${item.expression ?? key}</h4>
+                    <div class="slang-item">
 
-                    <p><strong>Meaning:</strong><br>
-                    ${item.meaning ?? item.actual_meaning ?? "N/A"}</p>
+                        <div class="culture-title">
+                            ${item.expression || language}
+                        </div>
 
-                    <p><strong>Tone:</strong>
-                    ${item.tone ?? "N/A"}</p>
+                        <div class="culture-meaning">
+                            ${item.meaning || "Cultural meaning unavailable."}
+                        </div>
 
-                </div>
+                        ${
+                            item.concept
+                            ?
+                            `
+                            <div class="meta">
+                                Cultural concept:
+                                ${item.concept}
+                            </div>
+                            `
+                            :
+                            ""
+                        }
+
+                    </div>
+
                 `;
+
             }
 
         } else {
 
-            culturalHTML = "<p>No cultural expression detected.</p>";
+            culturalHTML = `
+                <p class="culture-meaning">
+                    No cultural expression detected.
+                </p>
+            `;
 
         }
 
-        // -----------------------------
-        // Display Everything
-        // -----------------------------
-        document.getElementById("result").innerHTML = `
 
-        <div class="card">
-            <h3>🌍 Language</h3>
-            <p>${data.language}</p>
-        </div>
+        // -------------------------
+        // DISPLAY RESULTS
+        // -------------------------
 
-        <div class="card">
-            <h3>😊 Tone</h3>
-            <p>${data.tone}</p>
-        </div>
+        result.innerHTML = `
 
-        <div class="card">
-            <h3>💬 Slang</h3>
-            ${slangHTML}
-        </div>
+            <div class="result-card language-card">
 
-        <div class="card">
-            <h3>🌏 Cultural Meaning</h3>
-            ${culturalHTML}
-        </div>
+                <div class="card-label">
+                    <span class="card-icon">◉</span>
+                    Language
+                </div>
+
+                <div class="card-value">
+                    ${data.language || "Unknown"}
+                </div>
+
+            </div>
+
+
+            <div class="result-card tone-card">
+
+                <div class="card-label">
+                    <span class="card-icon">◌</span>
+                    Tone
+                </div>
+
+                <div class="card-value">
+                    ${data.tone || "Unknown"}
+                </div>
+
+            </div>
+
+
+            <div class="result-card culture-card">
+
+                <div class="card-label">
+                    <span class="card-icon">✦</span>
+                    Cultural Context
+                </div>
+
+                ${culturalHTML}
+
+            </div>
+
+
+            <div class="result-card slang-card">
+
+                <div class="card-label">
+                    <span class="card-icon">◆</span>
+                    Slang Intelligence
+                </div>
+
+                ${slangHTML}
+
+            </div>
+
+
+            <div class="result-card translation-card">
+
+                <div class="card-label">
+                    <span class="card-icon">↔</span>
+                    AI Interpretation
+                </div>
+
+                <div class="culture-meaning">
+
+                    Your message was analyzed for
+                    language, tone, slang and cultural
+                    context.
+
+                </div>
+
+            </div>
 
         `;
 
     }
+
     catch (error) {
 
-        document.getElementById("loader").style.display = "none";
+        loader.style.display = "none";
 
-        document.getElementById("result").innerHTML = `
-        <div class="card">
-            <h3>❌ Error</h3>
-            <p>Cannot connect to the backend. Make sure Flask is running.</p>
-        </div>
+        result.innerHTML = `
+
+            <div class="result-card culture-card">
+
+                <div class="card-label">
+                    <span class="card-icon">!</span>
+                    Connection Error
+                </div>
+
+                <div class="culture-meaning">
+
+                    Cannot connect to the AI backend.
+                    Make sure Flask is running on
+                    <strong>127.0.0.1:5000</strong>.
+
+                </div>
+
+            </div>
+
         `;
 
         console.error(error);
+
     }
+
+    finally {
+
+        button.disabled = false;
+        button.style.opacity = "1";
+
+    }
+
 }
