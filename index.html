@@ -1,132 +1,529 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LinguaX — Understand the Meaning Behind Words</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;0,600;1,500&amp;family=Inter:wght@300;400;500;600&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
+<style>
+  :root{
+    --void:#050807;
+    --void-2:#080f0c;
+    --panel:#0a1613;
+    --panel-2:#0d1c17;
+    --line: rgba(160,200,180,0.12);
+    --line-bright: rgba(160,200,180,0.28);
+    --emerald-900:#052e22;
+    --emerald-600:#0f8f5f;
+    --emerald-400:#3ddc97;
+    --emerald-glow:#6dffc0;
+    --gold-500:#a8823f;
+    --gold-400:#cda45e;
+    --gold-300:#e8c98a;
+    --gold-100:#f6e6c3;
+    --ink:#eef4ef;
+    --muted:#8aa89c;
+    --muted-dim:#5c766c;
+    --serif: 'Cormorant Garamond', serif;
+    --sans: 'Inter', sans-serif;
+    --mono: 'Space Mono', monospace;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background: var(--void);
+    color: var(--ink);
+    font-family: var(--sans);
+    overflow-x:hidden;
+    min-height:100vh;
+    position:relative;
+  }
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  /* ambient texture */
+  body::before{
+    content:'';
+    position:fixed; inset:0;
+    background:
+      radial-gradient(ellipse 60% 40% at 15% 0%, rgba(15,143,95,0.14), transparent 60%),
+      radial-gradient(ellipse 50% 35% at 100% 15%, rgba(168,130,63,0.10), transparent 60%),
+      radial-gradient(ellipse 70% 50% at 50% 100%, rgba(15,143,95,0.08), transparent 60%);
+    pointer-events:none;
+    z-index:0;
+  }
+  body::after{
+    content:'';
+    position:fixed; inset:0;
+    background-image:
+      linear-gradient(rgba(160,200,180,0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(160,200,180,0.035) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 20%, black, transparent 75%);
+    pointer-events:none;
+    z-index:0;
+  }
 
-    <title>LinguaX — AI Cultural & Slang Translator</title>
+  .wrap{ max-width:1240px; margin:0 auto; padding:0 40px; position:relative; z-index:1;}
 
-    <link rel="stylesheet" href="style.css">
+  /* -------- header -------- */
+  header{
+    padding:28px 0 26px;
+    border-bottom:1px solid var(--line);
+  }
+  .header-row{ display:flex; align-items:center; justify-content:space-between; }
+  .brand{ display:flex; align-items:center; gap:14px; }
+  .brand-word{ display:flex; flex-direction:column; }
+  .brand-word .name{
+    font-family:var(--serif); font-weight:600; font-size:24px; letter-spacing:0.06em;
+    background:linear-gradient(100deg, var(--gold-100), var(--emerald-glow) 65%, var(--gold-300));
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .brand-word .tag{ font-family:var(--mono); font-size:10px; letter-spacing:0.22em; color:var(--muted-dim); text-transform:uppercase; margin-top:2px;}
+  .status-pill{
+    display:flex; align-items:center; gap:8px;
+    font-family:var(--mono); font-size:10.5px; letter-spacing:0.14em; color:var(--emerald-glow);
+    border:1px solid rgba(61,220,151,0.35); background:rgba(15,143,95,0.08);
+    padding:7px 14px; border-radius:100px; text-transform:uppercase;
+  }
+  .status-pill .dot{ width:6px; height:6px; border-radius:50%; background:var(--emerald-glow); box-shadow:0 0 8px var(--emerald-glow); animation:pulse 2s ease-in-out infinite;}
+  @keyframes pulse{ 0%,100%{opacity:1;} 50%{opacity:0.35;} }
+
+  /* -------- seal (signature element) -------- */
+  .seal{ position:relative; width:46px; height:46px; flex-shrink:0; }
+  .seal svg{ width:100%; height:100%; animation: rotate-slow 50s linear infinite; }
+  .seal.spin svg{ animation: rotate-fast 1.1s linear infinite; }
+  @keyframes rotate-slow{ to{ transform:rotate(360deg); } }
+  @keyframes rotate-fast{ to{ transform:rotate(360deg); } }
+
+  /* -------- hero -------- */
+  .hero{
+    display:grid; grid-template-columns:1.05fr 1fr; gap:64px;
+    padding:88px 0 56px; align-items:center;
+  }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:9px;
+    font-family:var(--mono); font-size:10.5px; letter-spacing:0.2em; text-transform:uppercase;
+    color:var(--gold-300); border:1px solid rgba(205,164,94,0.35); background:rgba(205,164,94,0.06);
+    padding:7px 15px; border-radius:100px; margin-bottom:30px;
+  }
+  .eyebrow::before{ content:'✦'; color:var(--gold-300); font-size:11px; }
+  h1{
+    font-family:var(--serif); font-weight:500; font-size:clamp(42px,4.8vw,66px);
+    line-height:1.04; letter-spacing:-0.01em; color:var(--ink);
+  }
+  h1 .accent{
+    font-style:italic; font-weight:600;
+    background:linear-gradient(95deg, var(--emerald-glow), var(--gold-300) 80%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .lede{
+    font-size:16.5px; line-height:1.7; color:var(--muted); max-width:440px; margin-top:26px; font-weight:300;
+  }
+  .lang-row{ display:flex; align-items:center; gap:16px; margin-top:38px; }
+  .lang-chip{
+    font-family:var(--mono); font-size:11px; letter-spacing:0.08em; color:var(--muted);
+    border:1px solid var(--line); padding:8px 14px; border-radius:8px; background:rgba(255,255,255,0.015);
+  }
+  .lang-chip b{ color:var(--gold-300); font-weight:400; }
+
+  /* -------- console panel -------- */
+  .console{
+    background:linear-gradient(165deg, var(--panel), var(--void-2));
+    border:1px solid var(--line-bright);
+    border-radius:18px;
+    padding:30px 30px 26px;
+    box-shadow: 0 30px 80px -30px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.02) inset;
+    position:relative;
+  }
+  .console::before{
+    content:''; position:absolute; top:-1px; left:24px; right:24px; height:1px;
+    background:linear-gradient(90deg, transparent, var(--gold-400), transparent);
+  }
+  .console-head{ display:flex; align-items:center; justify-content:space-between; margin-bottom:18px;}
+  .console-label{ font-family:var(--mono); font-size:10.5px; letter-spacing:0.18em; color:var(--muted-dim); text-transform:uppercase;}
+  .console h2{ font-family:var(--serif); font-size:22px; font-weight:500; margin:8px 0 18px; color:var(--ink);}
+  textarea{
+    width:100%; min-height:118px; resize:vertical;
+    background:rgba(0,0,0,0.35); border:1px solid var(--line); border-radius:10px;
+    color:var(--ink); font-family:var(--sans); font-size:15px; line-height:1.6;
+    padding:16px; outline:none; transition:border-color .2s, box-shadow .2s;
+  }
+  textarea:focus{ border-color:rgba(61,220,151,0.5); box-shadow:0 0 0 3px rgba(61,220,151,0.08); }
+  .console-foot{ display:flex; align-items:center; justify-content:space-between; margin-top:18px; }
+  .supports{ font-family:var(--mono); font-size:11px; color:var(--muted-dim); }
+  .supports b{ color:var(--emerald-glow); font-weight:400; }
+  .btn-analyze{
+    display:inline-flex; align-items:center; gap:10px;
+    font-family:var(--sans); font-weight:600; font-size:14.5px; letter-spacing:0.02em; color:#08130f;
+    background:linear-gradient(100deg, var(--emerald-400), var(--gold-300));
+    border:none; padding:13px 26px; border-radius:10px; cursor:pointer;
+    box-shadow:0 10px 30px -10px rgba(61,220,151,0.4);
+    transition:transform .15s, box-shadow .15s;
+  }
+  .btn-analyze:hover{ transform:translateY(-1px); box-shadow:0 14px 34px -10px rgba(205,164,94,0.5); }
+  .btn-analyze:active{ transform:translateY(0); }
+  .btn-analyze svg{ width:15px; height:15px; }
+
+  /* -------- meta strip -------- */
+  .meta-strip{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+    font-family:var(--mono); font-size:11px; color:var(--muted-dim); letter-spacing:0.06em;
+  }
+  .meta-strip .dots{ display:flex; gap:6px; }
+  .meta-strip .dots span{ width:5px; height:5px; border-radius:50%; background:var(--line-bright); }
+
+  /* -------- results -------- */
+  .results{ padding:50px 0 40px; }
+  .results-head{ display:flex; align-items:center; justify-content:space-between; margin-bottom:26px; }
+  .results-title{ display:flex; align-items:center; gap:12px; }
+  .results-title h3{ font-family:var(--serif); font-size:26px; font-weight:500; }
+  .timestamp{ font-family:var(--mono); font-size:11px; color:var(--muted-dim); }
+
+  .grid-top{ display:grid; grid-template-columns:1fr 1fr 1.6fr; gap:20px; margin-bottom:20px; }
+  .card{
+    background:linear-gradient(160deg, var(--panel), var(--panel-2));
+    border:1px solid var(--line); border-radius:16px; padding:24px;
+    position:relative; overflow:hidden; opacity:0; transform:translateY(16px);
+    transition:opacity .6s ease, transform .6s ease, border-color .25s;
+  }
+  .card.show{ opacity:1; transform:translateY(0); }
+  .card:hover{ border-color: rgba(61,220,151,0.3); }
+  .card-label{
+    display:flex; align-items:center; gap:8px; font-family:var(--mono); font-size:10.5px;
+    letter-spacing:0.16em; text-transform:uppercase; color:var(--gold-300); margin-bottom:16px;
+  }
+  .card-label .ico{ width:14px; height:14px; opacity:0.9; }
+  .card-value{ font-family:var(--serif); font-size:30px; font-weight:500; color:var(--ink); }
+  .card-value.sub{ font-size:14px; color:var(--muted); font-family:var(--sans); margin-top:6px; }
+
+  .slang-card{ grid-column:span 1; }
+  .slang-top{ display:flex; align-items:flex-start; justify-content:space-between; }
+  .slang-word{ font-family:var(--serif); font-size:36px; font-weight:600; color:var(--emerald-glow); }
+  .pill-informal{
+    font-family:var(--mono); font-size:9.5px; letter-spacing:0.12em; color:var(--gold-100);
+    background:rgba(205,164,94,0.14); border:1px solid rgba(205,164,94,0.4);
+    padding:5px 11px; border-radius:100px; text-transform:uppercase; height:fit-content;
+  }
+  .slang-desc{ color:var(--muted); font-size:13.5px; line-height:1.6; margin:14px 0 18px; font-weight:300;}
+  .slang-facts{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px 18px; }
+  .fact-label{ font-family:var(--mono); font-size:9.5px; letter-spacing:0.1em; color:var(--muted-dim); text-transform:uppercase; margin-bottom:5px;}
+  .fact-value{ font-size:13.5px; color:var(--ink); font-weight:400; }
+  .fact-span2{ grid-column:span 2; }
+
+  /* cultural meaning */
+  .cultural-panel{
+    background:linear-gradient(160deg, var(--panel), var(--panel-2));
+    border:1px solid var(--line); border-radius:16px; padding:8px;
+    opacity:0; transform:translateY(16px); transition:opacity .6s ease .1s, transform .6s ease .1s;
+  }
+  .cultural-panel.show{ opacity:1; transform:translateY(0); }
+  .cultural-head{ display:flex; align-items:center; gap:10px; padding:18px 22px 14px; }
+  .cultural-head h4{ font-family:var(--serif); font-size:19px; font-weight:500; }
+  .cultural-cols{ display:grid; grid-template-columns:1.3fr 1fr 1fr; }
+  .cult-col{ padding:20px 22px; border-left:1px solid var(--line); position:relative; }
+  .cult-col:first-child{ border-left:none; }
+  .cult-col.active{ background:linear-gradient(160deg, rgba(61,220,151,0.05), transparent); }
+  .cult-col.active::before{
+    content:''; position:absolute; left:0; top:0; bottom:0; width:2px;
+    background:linear-gradient(180deg, var(--gold-400), var(--emerald-400));
+  }
+  .cult-lang{ display:flex; align-items:center; gap:8px; font-family:var(--mono); font-size:10.5px; letter-spacing:0.14em; color:var(--muted-dim); text-transform:uppercase; margin-bottom:14px; }
+  .cult-lang.active-label{ color:var(--gold-300); }
+  .cult-field{ margin-bottom:14px; }
+  .cult-field .k{ font-family:var(--mono); font-size:9.5px; letter-spacing:0.1em; color:var(--muted-dim); text-transform:uppercase; margin-bottom:4px; }
+  .cult-field .v{ font-size:14px; line-height:1.55; color:var(--ink); font-weight:300; }
+  .cult-field .v.big{ font-family:var(--serif); font-size:22px; color:var(--emerald-glow); font-weight:500; }
+  .cult-empty{ color:var(--muted-dim); font-size:20px; opacity:0.4; }
+  .cultural-image{
+    height:130px; margin:0 22px 20px; border-radius:10px; overflow:hidden; position:relative;
+    background: linear-gradient(180deg, rgba(15,143,95,0.15), rgba(0,0,0,0.4));
+    grid-column: 1 / -1;
+  }
+  .cultural-image svg{ position:absolute; bottom:0; left:0; width:100%; height:100%; opacity:0.5; }
+
+  footer{
+    border-top:1px solid var(--line); padding:26px 0 40px;
+    display:flex; align-items:center; justify-content:space-between;
+    font-family:var(--mono); font-size:10.5px; letter-spacing:0.12em; color:var(--muted-dim); text-transform:uppercase;
+  }
+
+  @media (max-width:920px){
+    .wrap{ padding:0 22px; }
+    .hero{ grid-template-columns:1fr; padding:56px 0 40px; gap:40px;}
+    .grid-top{ grid-template-columns:1fr; }
+    .cultural-cols{ grid-template-columns:1fr; }
+    .cult-col{ border-left:none; border-top:1px solid var(--line); }
+    .cult-col:first-child{ border-top:none; }
+    .meta-strip{ flex-wrap:wrap; gap:10px; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .seal svg, .status-pill .dot{ animation:none !important; }
+    .card, .cultural-panel{ transition:none; }
+  }
+
+  ::selection{ background:rgba(61,220,151,0.3); }
+  ::placeholder{ color:var(--muted-dim); }
+</style>
 </head>
-
 <body>
 
-    <div class="background-glow glow-one"></div>
-    <div class="background-glow glow-two"></div>
+<div class="wrap">
 
-    <main class="app">
-
-        <!-- HEADER -->
-        <header class="topbar">
-
-            <div class="brand">
-                <div class="brand-icon">◉</div>
-
-                <div>
-                    <h1>Lingua<span>X</span></h1>
-                    <p>AI Cultural & Slang Translator</p>
-                </div>
-            </div>
-
-            <div class="status">
-                <span class="status-dot"></span>
-                AI ONLINE
-            </div>
-
-        </header>
-
-
-        <!-- HERO -->
-        <section class="hero">
-
-            <div class="hero-badge">
-                ✦ CONTEXT-AWARE LANGUAGE AI
-            </div>
-
-            <h2>
-                Understand the
-                <span>meaning behind words.</span>
-            </h2>
-
-            <p>
-                Translate language, slang, tone and cultural context —
-                not just words.
-            </p>
-
-        </section>
-
-
-        <!-- CONVERSATIONAL INPUT -->
-        <section class="conversation-panel">
-
-            <div class="panel-header">
-
-                <div>
-                    <span class="eyebrow">YOUR MESSAGE</span>
-                    <h3>What do you want to understand?</h3>
-                </div>
-
-                <span class="ai-symbol">✦</span>
-
-            </div>
-
-            <textarea
-                id="inputText"
-                placeholder="Try something like:
-マジで、このライブやばい！
-மச்சி, அந்த படம் செம!"
-            ></textarea>
-
-            <div class="input-footer">
-
-                <span class="hint">
-                    Supports English · Tamil · Japanese
-                </span>
-
-                <button onclick="analyze()" id="analyzeButton">
-                    <span>Analyze</span>
-                    <span class="arrow">→</span>
-                </button>
-
-            </div>
-
-        </section>
-
-
-        <!-- LOADER -->
-        <div id="loader">
-
-            <div class="loader-ring"></div>
-
-            <div>
-                <strong>Understanding context...</strong>
-                <small>Analyzing language, slang & culture</small>
-            </div>
-
+  <header>
+    <div class="header-row">
+      <div class="brand">
+        <div class="seal" id="sealHeader">
+          <svg viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="46" fill="none" stroke="#cda45e" stroke-width="0.6" opacity="0.6"></circle>
+            <circle cx="50" cy="50" r="38" fill="none" stroke="#3ddc97" stroke-width="0.6" opacity="0.5"></circle>
+            <circle cx="50" cy="50" r="4" fill="#e8c98a"></circle>
+            <text x="50" y="20" text-anchor="middle" fill="#e8c98a" font-size="9" font-family="Cormorant Garamond, serif">日</text>
+            <text x="80" y="63" text-anchor="middle" fill="#6dffc0" font-size="9" font-family="Cormorant Garamond, serif">த</text>
+            <text x="20" y="63" text-anchor="middle" fill="#e8c98a" font-size="9" font-family="Cormorant Garamond, serif">A</text>
+          </svg>
         </div>
+        <div class="brand-word">
+          <span class="name">LinguaX</span>
+          <span class="tag">AI Cultural &amp; Slang Translator</span>
+        </div>
+      </div>
+      <div class="status-pill"><span class="dot"></span>AI Online</div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div>
+      <div class="eyebrow">Context-Aware Language Intelligence</div>
+      <h1>Understand the<br><span class="accent">meaning</span> behind<br>words.</h1>
+      <p class="lede">Translate language, slang, tone, and cultural context — not just words. A single phrase, read the way its own culture would read it.</p>
+      <div class="lang-row">
+        <div class="seal" id="sealSmall" style="width:30px;height:30px;">
+          <svg viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="46" fill="none" stroke="#cda45e" stroke-width="1" opacity="0.6"></circle>
+            <circle cx="50" cy="50" r="4" fill="#e8c98a"></circle>
+          </svg>
+        </div>
+        <div class="lang-chip"><b>English</b> · <b>தமிழ்</b> · <b>日本語</b></div>
+      </div>
+    </div>
+
+    <div class="console">
+      <div class="console-head">
+        <span class="console-label">Your Message</span>
+      </div>
+      <h2>What do you want to understand?</h2>
+      <textarea id="inputText" placeholder="Type a phrase in English, Tamil, or Japanese…">மச்சி, அது ரொம்ப ஓவர்தான் இல்ல?</textarea>
+      <div class="console-foot">
+        <div class="supports">Supports: <b>English · Tamil · Japanese</b></div>
+        <button class="btn-analyze" id="analyzeBtn">Analyze <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+      </div>
+    </div>
+  </section>
+
+  <div class="meta-strip">
+    <span>⌖ 13.0827° N, 80.2707° E</span>
+    <div class="dots"><span></span><span></span><span></span></div>
+    <span id="metaTime">August 28, 2026 · 10:26 AM</span>
+  </div>
+
+  <section class="results" id="resultsSection" style="display: block;">
+    <div class="results-head">
+      <div class="results-title">
+        <div class="seal" id="sealResult" style="width:26px;height:26px;">
+          <svg viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="46" fill="none" stroke="#3ddc97" stroke-width="1" opacity="0.7"></circle>
+            <circle cx="50" cy="50" r="4" fill="#3ddc97"></circle>
+          </svg>
+        </div>
+        <h3>Analysis Result</h3>
+      </div>
+      <span class="timestamp" id="resultTime">August 28, 2026 · 10:26 AM</span>
+    </div>
+
+    <div class="grid-top">
+      <div class="card show" id="cardLang">
+        <div class="card-label"><span class="ico">🌐</span>Language</div>
+        <div class="card-value" id="valLang">Tamil</div>
+        <div class="card-value sub" id="valLangNative">தமிழ்</div>
+      </div>
+      <div class="card show" id="cardTone">
+        <div class="card-label"><span class="ico">◐</span>Tone</div>
+        <div class="card-value" id="valTone">Casual</div>
+        <div class="card-value sub" id="valToneNative">சாதாரண</div>
+      </div>
+      <div class="card slang-card show" id="cardSlang">
+        <div class="slang-top">
+          <div>
+            <div class="card-label"><span class="ico">◆</span>Slang Detected</div>
+            <div class="slang-word" id="slangWord">மச்சி</div>
+          </div>
+          <span class="pill-informal" id="slangFormality">INFORMAL</span>
+        </div>
+        <p class="slang-desc" id="slangDesc">A close, informal term for a friend or peer — roughly 'bro' or 'dude', used almost exclusively among peers of similar age.</p>
+        <div class="slang-facts">
+          <div><div class="fact-label">Category</div><div class="fact-value" id="fCategory">colloquial_address</div></div>
+          <div><div class="fact-label">Tone</div><div class="fact-value" id="fTone">friendly / familiar</div></div>
+          <div><div class="fact-label">Region</div><div class="fact-value" id="fRegion">chennai_urban</div></div>
+          <div class="fact-span2"><div class="fact-label">Example</div><div class="fact-value" id="fExample">மச்சி, வா போலாம்</div></div>
+          <div><div class="fact-label">Language</div><div class="fact-value" id="fLanguage">Tamil</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cultural-panel show" id="culturalPanel">
+      <div class="cultural-head">
+        <span class="card-label" style="margin-bottom:0;"><span class="ico">◈</span>Cultural Meaning</span>
+      </div>
+      <div class="cultural-cols" id="culturalCols">
+    <div class="cult-col active">
+      <div class="cult-lang active-label">Tamil</div>
+      
+        <div class="cult-field"><div class="k">Concept</div><div class="v">peer_camaraderie</div></div>
+        <div class="cult-field"><div class="k">Expression</div><div class="v big">மச்சி</div></div>
+        <div class="cult-field"><div class="k">Meaning</div><div class="v">Signals closeness and equal footing; using it with elders or strangers can read as disrespectful.</div></div>
+      
+    </div>
+    <div class="cult-col ">
+      <div class="cult-lang ">Japanese</div>
+      <div class="cult-empty">—</div>
+    </div>
+    <div class="cult-col ">
+      <div class="cult-lang ">English</div>
+      <div class="cult-empty">—</div>
+    </div></div>
+    </div>
+  </section>
+
+  <footer>
+    <span>LinguaX</span>
+    <span>AI Cultural Intelligence</span>
+    <span>© 2026</span>
+  </footer>
+
+</div>
+
+<script>
+const DB = {
+  japanese: {
+    lang:{ name:'Japanese', native:'日本語' },
+    tone:{ name:'Neutral', native:'ニュートラル' },
+    slang:{
+      word:'マジで', formality:'INFORMAL', category:'internet_slang', toneDetail:'context-dependent',
+      region:'general', example:'Not available', language:'Japanese',
+      desc:"Used to express sincerity or emphasis, or as a question meaning 'really?!'"
+    },
+    cultural:[
+      { code:'JP', label:'Japanese', concept:'expressing_strong_agreement', expression:'マジで',
+        meaning:'Emphatic confirmation, common across all ages, softer in tone than English slang equivalents.' },
+      { code:'TA', label:'Tamil', concept:null, expression:null, meaning:null },
+      { code:'EN', label:'English', concept:null, expression:null, meaning:null }
+    ]
+  },
+  tamil: {
+    lang:{ name:'Tamil', native:'தமிழ்' },
+    tone:{ name:'Casual', native:'சாதாரண' },
+    slang:{
+      word:'மச்சி', formality:'INFORMAL', category:'colloquial_address', toneDetail:'friendly / familiar',
+      region:'chennai_urban', example:'மச்சி, வா போலாம்', language:'Tamil',
+      desc:"A close, informal term for a friend or peer — roughly 'bro' or 'dude', used almost exclusively among peers of similar age."
+    },
+    cultural:[
+      { code:'TA', label:'Tamil', concept:'peer_camaraderie', expression:'மச்சி',
+        meaning:'Signals closeness and equal footing; using it with elders or strangers can read as disrespectful.' },
+      { code:'JP', label:'Japanese', concept:null, expression:null, meaning:null },
+      { code:'EN', label:'English', concept:null, expression:null, meaning:null }
+    ]
+  },
+  english: {
+    lang:{ name:'English', native:'English' },
+    tone:{ name:'Sarcastic', native:'sarcastic' },
+    slang:{
+      word:'no cap', formality:'INFORMAL', category:'internet_slang', toneDetail:'assertive',
+      region:'general_gen_z', example:"That fit is fire, no cap", language:'English',
+      desc:"Used to assert that a statement is genuinely true, countering assumed exaggeration or disbelief."
+    },
+    cultural:[
+      { code:'EN', label:'English', concept:'sincerity_marker', expression:'no cap',
+        meaning:'Originated in African-American Vernacular English before spreading into mainstream Gen Z usage.' },
+      { code:'JP', label:'Japanese', concept:null, expression:null, meaning:null },
+      { code:'TA', label:'Tamil', concept:null, expression:null, meaning:null }
+    ]
+  }
+};
+
+function detectLanguage(text){
+  if(/[\u3040-\u30ff\u4e00-\u9faf]/.test(text)) return 'japanese';
+  if(/[\u0b80-\u0bff]/.test(text)) return 'tamil';
+  return 'english';
+}
+
+function renderCultural(cols){
+  const el = document.getElementById('culturalCols');
+  el.innerHTML = cols.map(c => {
+    const active = !!c.concept;
+    return `
+    <div class="cult-col ${active ? 'active' : ''}">
+      <div class="cult-lang ${active ? 'active-label' : ''}">${c.label}</div>
+      ${active ? `
+        <div class="cult-field"><div class="k">Concept</div><div class="v">${c.concept}</div></div>
+        <div class="cult-field"><div class="k">Expression</div><div class="v big">${c.expression}</div></div>
+        <div class="cult-field"><div class="k">Meaning</div><div class="v">${c.meaning}</div></div>
+      ` : `<div class="cult-empty">—</div>`}
+    </div>`;
+  }).join('');
+}
+
+function fmtTime(){
+  const d = new Date();
+  return d.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'}) + ' · ' +
+         d.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',hour12:true});
+}
+document.getElementById('metaTime').textContent = fmtTime();
+
+document.getElementById('analyzeBtn').addEventListener('click', () => {
+  const text = document.getElementById('inputText').value.trim();
+  if(!text) return;
+  const key = detectLanguage(text);
+  const data = DB[key];
+
+  const btn = document.getElementById('analyzeBtn');
+  const seals = [document.getElementById('sealHeader'), document.getElementById('sealSmall'), document.getElementById('sealResult')];
+  seals.forEach(s => s.classList.add('spin'));
+  btn.textContent = 'Analyzing…';
+
+  setTimeout(() => {
+    seals.forEach(s => s.classList.remove('spin'));
+    btn.innerHTML = 'Analyze <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+
+    document.getElementById('valLang').textContent = data.lang.name;
+    document.getElementById('valLangNative').textContent = data.lang.native;
+    document.getElementById('valTone').textContent = data.tone.name;
+    document.getElementById('valToneNative').textContent = data.tone.native;
+
+    document.getElementById('slangWord').textContent = data.slang.word;
+    document.getElementById('slangFormality').textContent = data.slang.formality;
+    document.getElementById('slangDesc').textContent = data.slang.desc;
+    document.getElementById('fCategory').textContent = data.slang.category;
+    document.getElementById('fTone').textContent = data.slang.toneDetail;
+    document.getElementById('fRegion').textContent = data.slang.region;
+    document.getElementById('fExample').textContent = data.slang.example;
+    document.getElementById('fLanguage').textContent = data.slang.language;
+
+    renderCultural(data.cultural);
+    document.getElementById('resultTime').textContent = fmtTime();
+
+    document.getElementById('resultsSection').style.display = 'block';
+    document.querySelectorAll('.card, .cultural-panel').forEach((el,i) => {
+      el.classList.remove('show');
+      setTimeout(() => el.classList.add('show'), 60 + i*90);
+    });
+
+    document.getElementById('resultsSection').scrollIntoView({behavior:'smooth', block:'start'});
+  }, 900);
+});
+</script>
 
 
-        <!-- RESULTS -->
-        <section id="result" class="results"></section>
 
-
-        <!-- FOOTER -->
-        <footer>
-
-            <span>LINGUAX</span>
-
-            <span>AI Cultural Intelligence</span>
-
-            <span>© 2026</span>
-
-        </footer>
-
-    </main>
-
-
-    <script src="script.js"></script>
-
-</body>
-
-</html>
+</body></html>
