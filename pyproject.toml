@@ -1,0 +1,2 @@
+[tool.vercel]
+entrypoint = "AI cultural translator_backend:app"
