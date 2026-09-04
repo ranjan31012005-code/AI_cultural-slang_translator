@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="en">
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LinguaX — Understand the Meaning Behind Words</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;0,600;1,500&amp;family=Inter:wght@300;400;500;600&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;0,600;1,500&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --void:#050807;
@@ -275,9 +276,9 @@
       <div class="brand">
         <div class="seal" id="sealHeader">
           <svg viewBox="0 0 100 100">
-            <circle cx="50" cy="50" r="46" fill="none" stroke="#cda45e" stroke-width="0.6" opacity="0.6"></circle>
-            <circle cx="50" cy="50" r="38" fill="none" stroke="#3ddc97" stroke-width="0.6" opacity="0.5"></circle>
-            <circle cx="50" cy="50" r="4" fill="#e8c98a"></circle>
+            <circle cx="50" cy="50" r="46" fill="none" stroke="#cda45e" stroke-width="0.6" opacity="0.6"/>
+            <circle cx="50" cy="50" r="38" fill="none" stroke="#3ddc97" stroke-width="0.6" opacity="0.5"/>
+            <circle cx="50" cy="50" r="4" fill="#e8c98a"/>
             <text x="50" y="20" text-anchor="middle" fill="#e8c98a" font-size="9" font-family="Cormorant Garamond, serif">日</text>
             <text x="80" y="63" text-anchor="middle" fill="#6dffc0" font-size="9" font-family="Cormorant Garamond, serif">த</text>
             <text x="20" y="63" text-anchor="middle" fill="#e8c98a" font-size="9" font-family="Cormorant Garamond, serif">A</text>
@@ -300,8 +301,8 @@
       <div class="lang-row">
         <div class="seal" id="sealSmall" style="width:30px;height:30px;">
           <svg viewBox="0 0 100 100">
-            <circle cx="50" cy="50" r="46" fill="none" stroke="#cda45e" stroke-width="1" opacity="0.6"></circle>
-            <circle cx="50" cy="50" r="4" fill="#e8c98a"></circle>
+            <circle cx="50" cy="50" r="46" fill="none" stroke="#cda45e" stroke-width="1" opacity="0.6"/>
+            <circle cx="50" cy="50" r="4" fill="#e8c98a"/>
           </svg>
         </div>
         <div class="lang-chip"><b>English</b> · <b>தமிழ்</b> · <b>日本語</b></div>
@@ -316,7 +317,10 @@
       <textarea id="inputText" placeholder="Type a phrase in English, Tamil, or Japanese…">மச்சி, அது ரொம்ப ஓவர்தான் இல்ல?</textarea>
       <div class="console-foot">
         <div class="supports">Supports: <b>English · Tamil · Japanese</b></div>
-        <button class="btn-analyze" id="analyzeBtn">Analyze <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+        <button class="btn-analyze" id="analyzeBtn">
+          Analyze
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
       </div>
     </div>
   </section>
@@ -324,74 +328,58 @@
   <div class="meta-strip">
     <span>⌖ 13.0827° N, 80.2707° E</span>
     <div class="dots"><span></span><span></span><span></span></div>
-    <span id="metaTime">August 28, 2026 · 10:26 AM</span>
+    <span id="metaTime">—</span>
   </div>
 
-  <section class="results" id="resultsSection" style="display: block;">
+  <section class="results" id="resultsSection" style="display:none;">
     <div class="results-head">
       <div class="results-title">
         <div class="seal" id="sealResult" style="width:26px;height:26px;">
           <svg viewBox="0 0 100 100">
-            <circle cx="50" cy="50" r="46" fill="none" stroke="#3ddc97" stroke-width="1" opacity="0.7"></circle>
-            <circle cx="50" cy="50" r="4" fill="#3ddc97"></circle>
+            <circle cx="50" cy="50" r="46" fill="none" stroke="#3ddc97" stroke-width="1" opacity="0.7"/>
+            <circle cx="50" cy="50" r="4" fill="#3ddc97"/>
           </svg>
         </div>
         <h3>Analysis Result</h3>
       </div>
-      <span class="timestamp" id="resultTime">August 28, 2026 · 10:26 AM</span>
+      <span class="timestamp" id="resultTime"></span>
     </div>
 
     <div class="grid-top">
-      <div class="card show" id="cardLang">
+      <div class="card" id="cardLang">
         <div class="card-label"><span class="ico">🌐</span>Language</div>
-        <div class="card-value" id="valLang">Tamil</div>
-        <div class="card-value sub" id="valLangNative">தமிழ்</div>
+        <div class="card-value" id="valLang">—</div>
+        <div class="card-value sub" id="valLangNative">—</div>
       </div>
-      <div class="card show" id="cardTone">
+      <div class="card" id="cardTone">
         <div class="card-label"><span class="ico">◐</span>Tone</div>
-        <div class="card-value" id="valTone">Casual</div>
-        <div class="card-value sub" id="valToneNative">சாதாரண</div>
+        <div class="card-value" id="valTone">—</div>
+        <div class="card-value sub" id="valToneNative">—</div>
       </div>
-      <div class="card slang-card show" id="cardSlang">
+      <div class="card slang-card" id="cardSlang">
         <div class="slang-top">
           <div>
             <div class="card-label"><span class="ico">◆</span>Slang Detected</div>
-            <div class="slang-word" id="slangWord">மச்சி</div>
+            <div class="slang-word" id="slangWord">—</div>
           </div>
           <span class="pill-informal" id="slangFormality">INFORMAL</span>
         </div>
-        <p class="slang-desc" id="slangDesc">A close, informal term for a friend or peer — roughly 'bro' or 'dude', used almost exclusively among peers of similar age.</p>
+        <p class="slang-desc" id="slangDesc">—</p>
         <div class="slang-facts">
-          <div><div class="fact-label">Category</div><div class="fact-value" id="fCategory">colloquial_address</div></div>
-          <div><div class="fact-label">Tone</div><div class="fact-value" id="fTone">friendly / familiar</div></div>
-          <div><div class="fact-label">Region</div><div class="fact-value" id="fRegion">chennai_urban</div></div>
-          <div class="fact-span2"><div class="fact-label">Example</div><div class="fact-value" id="fExample">மச்சி, வா போலாம்</div></div>
-          <div><div class="fact-label">Language</div><div class="fact-value" id="fLanguage">Tamil</div></div>
+          <div><div class="fact-label">Category</div><div class="fact-value" id="fCategory">—</div></div>
+          <div><div class="fact-label">Tone</div><div class="fact-value" id="fTone">—</div></div>
+          <div><div class="fact-label">Region</div><div class="fact-value" id="fRegion">—</div></div>
+          <div class="fact-span2"><div class="fact-label">Example</div><div class="fact-value" id="fExample">—</div></div>
+          <div><div class="fact-label">Language</div><div class="fact-value" id="fLanguage">—</div></div>
         </div>
       </div>
     </div>
 
-    <div class="cultural-panel show" id="culturalPanel">
+    <div class="cultural-panel" id="culturalPanel">
       <div class="cultural-head">
         <span class="card-label" style="margin-bottom:0;"><span class="ico">◈</span>Cultural Meaning</span>
       </div>
-      <div class="cultural-cols" id="culturalCols">
-    <div class="cult-col active">
-      <div class="cult-lang active-label">Tamil</div>
-      
-        <div class="cult-field"><div class="k">Concept</div><div class="v">peer_camaraderie</div></div>
-        <div class="cult-field"><div class="k">Expression</div><div class="v big">மச்சி</div></div>
-        <div class="cult-field"><div class="k">Meaning</div><div class="v">Signals closeness and equal footing; using it with elders or strangers can read as disrespectful.</div></div>
-      
-    </div>
-    <div class="cult-col ">
-      <div class="cult-lang ">Japanese</div>
-      <div class="cult-empty">—</div>
-    </div>
-    <div class="cult-col ">
-      <div class="cult-lang ">English</div>
-      <div class="cult-empty">—</div>
-    </div></div>
+      <div class="cultural-cols" id="culturalCols"></div>
     </div>
   </section>
 
@@ -523,7 +511,34 @@ document.getElementById('analyzeBtn').addEventListener('click', () => {
   }, 900);
 });
 </script>
+<footer class="site-footer">
 
+    <div class="footer-brand">
+        <span>LINGUAX</span>
+    </div>
 
+    <div class="digital-signature">
+        <span class="signature-label">CRAFTED & DESIGNED BY</span>
 
-</body></html>
+        <img
+            src="assets/signature.png"
+            alt="Ranjan's Digital Signature"
+            class="signature-image"
+        >
+
+        <span class="signature-name">Ranjan</span>
+    </div>
+
+    <div class="footer-center">
+        <span class="ai-icon">◉</span>
+        AI Cultural Intelligence
+    </div>
+
+    <div class="footer-copy">
+        © 2026 LinguaX
+    </div>
+
+</footer>
+
+</body>
+</html>
